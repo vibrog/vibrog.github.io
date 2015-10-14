@@ -10,8 +10,8 @@
 <!-- bring in the map layers -->
 <script src="http://tile.tusvik.no/js/tile.tusvik.js"></script>
 
-<!-- bring in Proj4 to set UTM zone 32 appropriately -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.12/proj4.js"></script>
+<!-- bring in Proj4 to set UTM zone 32 (EPSG:32632) appropriately -->
+<script type="text/javascript" src="http://svn.osgeo.org/metacrs/proj4js/trunk/lib/proj4js-compressed.js"></script>
 
 <script type="text/javascript">
 // Start position for the map
@@ -20,7 +20,7 @@ var lon=10.72
 var zoom=11
 OpenLayers.Lang.setCode("nb");
 
-proj4.defs('EPSG:32632', "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs");
+Proj4js.defs["EPSG:32632"] = "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs";
 
 // Use cookies to remember last map view
 var cookiename = "mapView";  // Name for this cookie
