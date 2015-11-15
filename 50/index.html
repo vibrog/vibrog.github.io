@@ -12,9 +12,9 @@
 
 <script type="text/javascript">
 // Start position for the map
-var lat=60.00
+var lat=59.995
 var lon=10.68
-var zoom=12
+var zoom=13
 OpenLayers.Lang.setCode("nb");
 
 var map; //complex object of type OpenLayers.Map
@@ -37,13 +37,11 @@ function init() {
   });
 
   // Define the map layers
-  // toporaster3, topo2, topo2graatone
-  // See http://kartverket.no/Kart/Kartverksted/Visningstjenester/
   var layerStatkartRaster = new OpenLayers.Layer.XYZ(
     'Kartverket topo',
     'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=toporaster3&zoom=${z}&x=${x}&y=${y}',
     {maxZoomLevel: 19,
-     attribution: 'Kartgrunnlag: <a href="//kartverket.no/">Kartverket</a>'});
+     attribution: 'Kart &copy; <a href="//kartverket.no/">Kartverket</a>'});
   map.addLayer(layerStatkartRaster);
 
   // Add vector layers
@@ -57,7 +55,7 @@ function init() {
         extractAttributes: true
       })
     }),
-    attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
+    attribution: '<a href="//osm.org/">OpenStreetMap</a>'
   });
   map.addLayer(lgpx);
 

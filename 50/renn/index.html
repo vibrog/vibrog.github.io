@@ -43,7 +43,7 @@ function init() {
     'Kartverket topo',
     'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2graatone&zoom=${z}&x=${x}&y=${y}',
     {maxZoomLevel: 19,
-     attribution: 'Kartgrunnlag: <a href="//kartverket.no/">Kartverket</a>'});
+     attribution: 'Kart &copy; <a href="//kartverket.no/">Kartverket</a>'});
   map.addLayer(layerStatkartRaster);
 
   // Add vector layers
@@ -57,7 +57,7 @@ function init() {
         extractAttributes: true
       })
     }),
-    attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
+    attribution: '<a href="//osm.org/">OpenStreetMap</a>'
   });
   map.addLayer(lgpx);
 
