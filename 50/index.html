@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Holmenkollen 50km</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+<!-- Bring in the OpenLayers javascript library -->
+<link rel="stylesheet" href="http://dev.openlayers.org/releases/OpenLayers-2.13.1/theme/default/style.css" type="text/css"/>
+<script src="http://dev.openlayers.org/releases/OpenLayers-2.13.1/OpenLayers.js"></script>
+
+<script type="text/javascript">
+// Start position for the map
+var lat=60.00
+var lon=10.68
+var zoom=12
+OpenLayers.Lang.setCode("nb");
+
+var map; //complex object of type OpenLayers.Map
+//Initialise the 'map' object
+function init() {
+  map = new OpenLayers.Map({
+    div: "map",
+    theme: null,
+    projection: "EPSG:900913",
+    displayProjection: new OpenLayers.Projection("EPSG:4326"),
+    numZoomLevels: 20,
+    controls: [
+      new OpenLayers.Control.TouchNavigation(),
+      new OpenLayers.Control.KeyboardDefaults(),
+      new OpenLayers.Control.Zoom(),
+      new OpenLayers.Control.KeyboardDefaults(),
+      new OpenLayers.Control.Attribution(),
+      new OpenLayers.Control.Permalink({anchor: true})
+    ]
+  });
+
+  // Define the map layers
+  // toporaster3, topo2, topo2graatone
+  // See http://kartverket.no/Kart/Kartverksted/Visningstjenester/
+  var layerStatkartRaster = new OpenLayers.Layer.XYZ(
+    'Kartverket topo',
+    'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=toporaster3&zoom=${z}&x=${x}&y=${y}',
+    {maxZoomLevel: 19,
+     attribution: 'Kartgrunnlag: <a href="//kartverket.no/">Kartverket</a>'});
+  map.addLayer(layerStatkartRaster);
+
+  // Add vector layers
+  var lgpx = new OpenLayers.Layer.Vector("50 km traseer", {
+    projection: map.displayProjection,
+    strategies: [new OpenLayers.Strategy.Fixed()],
+    protocol: new OpenLayers.Protocol.HTTP({
+      url: "trk.kml",
+      format: new OpenLayers.Format.KML({
+        extractStyles: true,
+        extractAttributes: true
+      })
+    }),
+    attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
+  });
+  map.addLayer(lgpx);
+
+  var lonLat = new OpenLayers.LonLat(lon, lat).transform(
+    new OpenLayers.Projection("EPSG:4326"),
+    map.getProjectionObject());
+  if( ! map.getCenter() ){ map.setCenter(lonLat, zoom); }
+
+}
+
+window.onload = init;
+</script>
+
+<style type="text/css">
+body { margin:0; }
+div#map { width:100%; height:100%; }
+.olControlAttribution {
+  font-size:8pt;
+  left:5px; bottom:5px;
+}
+</style>
+
+</head>
+<body>
+  <!-- Define a DIV into which the map will appear. -->
+  <div id="map"></div>
+</body>
+</html>
