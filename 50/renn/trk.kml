@@ -1,6 +1,6 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document><name>Holmenkollens 50km</name>
-<Style id="styleRn"><LineStyle><color>ff0011cc</color><width>6</width></LineStyle></Style>
+<Style id="styleRn"><LineStyle><color>ff4e3225</color><width>6</width></LineStyle></Style>
 <Placemark>
 <name>2x25 2016</name>
 <styleUrl>#styleRn</styleUrl>
