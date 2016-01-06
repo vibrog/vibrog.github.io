@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="no">
+<head>
+<title>Veifar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+<!-- Bring in the OpenLayers javascript library -->
+<link rel="stylesheet" href="http://dev.openlayers.org/releases/OpenLayers-2.13.1/theme/default/style.css" type="text/css"/>
+<script src="http://dev.openlayers.org/releases/OpenLayers-2.13.1/OpenLayers.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+// Start position for the map
+var lat=60.10
+var lon=10.63
+var zoom=11
+OpenLayers.Lang.setCode("nb");
+
+var map; //complex object of type OpenLayers.Map
+//Initialise the 'map' object
+function init() {
+  map = new OpenLayers.Map ({
+    div: "map",
+    theme: null,
+    projection: "EPSG:900913",
+    displayProjection: new OpenLayers.Projection("EPSG:4326"),
+    numZoomLevels: 20,
+    controls: [
+      new OpenLayers.Control.ArgParser(),
+      new OpenLayers.Control.TouchNavigation(),
+      new OpenLayers.Control.KeyboardDefaults(),
+      new OpenLayers.Control.Zoom(),
+      new OpenLayers.Control.Attribution(),
+      new OpenLayers.Control.Permalink({anchor: true})
+    ]
+  });
+
+  var layerHistorical = new OpenLayers.Layer.XYZ(
+    "Veifar",
+    ["http://a.tile.tusvik.no/tiles/historicalroads/${z}/${x}/${y}.png",
+     "http://b.tile.tusvik.no/tiles/historicalroads/${z}/${x}/${y}.png",
+     "http://c.tile.tusvik.no/tiles/historicalroads/${z}/${x}/${y}.png",
+     "http://d.tile.tusvik.no/tiles/historicalroads/${z}/${x}/${y}.png"],
+    {transitionEffect:"resize",
+     maxZoomLevel: 19,
+     attribution: "&copy; <a href='//osm.org/copyright'>OpenStreetMap</a>-bidragsytere"
+    });
+  map.addLayer(layerHistorical);
+
+  var lonLat = new OpenLayers.LonLat(lon, lat).transform(
+    new OpenLayers.Projection("EPSG:4326"),
+    map.getProjectionObject());
+  if( ! map.getCenter() ){ map.setCenter(lonLat, zoom); }
+
+}
+
+window.onload = init;
+</script>
+
+<style type="text/css">
+body { margin: 0; }
+div#map { width: 100%; height: 100%; }
+.olControlAttribution {
+  font-size: 8pt;
+  text-align: right;
+  color: #eee;
+  bottom: 0; right: 0;
+  background: #130085; /* fallback for IE - IE6 requires background shorthand*/
+  background: rgba(0, 60, 136, 0.3);
+  filter: alpha(opacity=30);
+  font-family: 'Lucida Grande', Lucida, Arial, Helvetica, sans-serif;
+  padding: 2px 5px;
+  border-radius: 5px 0 0 0;
+}
+.olControlAttribution a { color: inherit; text-decoration: none; }
+</style>
+
+</head>
+<body>
+  <!-- Define a DIV into which the map will appear. -->
+  <div id="map"></div>
+</body>
+</html>
