@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Kullmiler</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://openlayers.org/en/v3.19.0/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v3.19.0/build/ol.js"></script>
+<style>body, #map { margin:0; padding:0; width:100%; height:100%; }</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+function pointStyleFunction(feature, resolution) {
+  return new ol.style.Style({
+    image: new ol.style.Circle({
+      radius: 5,
+      stroke: new ol.style.Stroke({color: 'black', width: 1}),
+      fill: new ol.style.Fill({color: 'rgba(128,128,128,0.4)'})
+    })
+  });
+};
+var map = new ol.Map({
+  target: 'map',
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        attributions: '<a href="http://www.kartverket.no/">Kartverket</a>',
+        url: 'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2&zoom={z}&x={x}&y={y}'
+      })
+    }),
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        attributions: '<a href="http://osm.org/">OpenStreetMap-contributors</a>',
+        url: 'http://overpass-api.de/api/interpreter?data=node[historic=charcoal_pile](59.67,10.26,60.28,11.16);out;',
+        format: new ol.format.OSMXML()
+      }),
+      style: pointStyleFunction
+    })
+  ],
+  view: new ol.View({
+    center: ol.proj.fromLonLat([10.459,59.987]),
+    zoom: 12
+  })
+});
+</script>
+</body>
+</html>
