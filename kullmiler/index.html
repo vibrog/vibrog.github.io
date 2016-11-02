@@ -9,14 +9,37 @@
 <body>
 <div id="map"></div>
 <script>
-function pointStyleFunction(feature, resolution) {
-  return new ol.style.Style({
-    image: new ol.style.Circle({
-      radius: 6,
-      stroke: new ol.style.Stroke({color: '#5a2d0c', width: 1}),
-      fill: new ol.style.Fill({color: 'rgba(90,45,12,0.4)'})
+var styles = {
+  'fixme': {
+    'resurvey': new ol.style.Style({
+      image: new ol.style.Circle({
+        radius: 6,
+        stroke: new ol.style.Stroke({color: '#5a2d0c', width: 1}),
+        fill: new ol.style.Fill({color: 'rgba(90,45,12,0.2)'})
+      })
     })
-  });
+  },
+  'historic': {
+    'charcoal_pile': new ol.style.Style({
+      image: new ol.style.Circle({
+        radius: 6,
+        stroke: new ol.style.Stroke({color: '#5a2d0c', width: 1}),
+        fill: new ol.style.Fill({color: 'rgba(90,45,12,0.6)'})
+      })
+    })
+  }
+};
+function pointStyleFunction(feature, resolution) {
+  for (var key in styles) {
+    var value = feature.get(key);
+    if (value !== undefined) {
+      for (var regexp in styles[key]) {
+        if (new RegExp(regexp).test(value)) {
+          return styles[key][regexp];
+        }
+      }
+    }
+  }
 };
 var map = new ol.Map({
   target: 'map',
