@@ -46,13 +46,13 @@ var map = new ol.Map({
   layers: [
     new ol.layer.Tile({
       source: new ol.source.XYZ({
-        attributions: '<a href="http://www.kartverket.no/">Kartverket</a>',
+        attributions: '<a href="http://kartverket.no/">Kartverket</a>',
         url: 'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2&zoom={z}&x={x}&y={y}'
       })
     }),
     new ol.layer.Vector({
       source: new ol.source.Vector({
-        attributions: '<a href="http://osm.org/">OpenStreetMap-contributors</a>',
+        attributions: 'Jan Martin Larsen/<a href="http://abhistorielag.no/">Asker og Bærum historielag</a>, Vidar B. Gundersen, Tore Vefferstad, Bjørn Kåre Salvesen, Odd Joakim Olsen, Ståle Pinslie, <a href="http://hoydedata.no/">hoydedata.no</a>',
         url: 'http://overpass-api.de/api/interpreter?data=node[historic=charcoal_pile](59.67,10.26,60.28,11.16);out;',
         format: new ol.format.OSMXML()
       }),
