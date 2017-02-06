@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Historiske ferdselsveier fra Oslo til Hadeland</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://openlayers.org/en/v3.20.1/css/ol.css" type="text/css"/>
+<script src="https://openlayers.org/en/v3.20.1/build/ol.js"></script>
+<style>
+body, #map { margin:0; padding:0; width:100%; height:100%; }
+.ol-control button {
+  background-color: rgba(34,34,34,0.5);
+}
+.ol-control button:hover,
+.ol-control button:focus {
+  text-decoration: none;
+  background-color: rgba(34,34,34,0.7);
+}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+var map = new ol.Map({
+  target: 'map',
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        attributions: '<a href="http://kartverket.no/">Kartverket</a>',
+        url: 'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2graatone&zoom={z}&x={x}&y={y}'
+      })
+    }),
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        url: 'pinslie-leting.gpx',
+        format: new ol.format.GPX()
+      }),
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({color: 'rgba(255,0,85,.9)', width: 1})
+      })
+    }),
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        url: 'http://overpass-api.de/api/interpreter?data=(relation(6701497);relation(3897913);relation(1603624);relation(1786978););(._;>;);out;',
+        format: new ol.format.OSMXML()
+      }),
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({color: 'rgba(255,0,85,.5)', width: 5})
+      })
+    }),
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        attributions: '<a href="http://www.maridalensvenner.no/arbok-maridalens-venner-2017.5947624-15237.html">Ståle Pinslie</a>, Vidar B. Gundersen, <a href="http://osm.org/">OpenStreetMap-bidragsytere</a>,',
+        url: 'pinslie-turer.gpx',
+        format: new ol.format.GPX()
+      }),
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({color: 'rgb(255,0,85)', width: 5})
+      })
+    })
+  ],
+  view: new ol.View({
+    center: ol.proj.fromLonLat([10.8087,60.0574]),
+    zoom: 12
+  })
+});
+</script>
+</body>
+</html>
