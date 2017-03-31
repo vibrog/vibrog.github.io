@@ -3,33 +3,33 @@
 <Document id="root_doc">
 <Style id="allowed">
   <LineStyle>
-    <color>ff009c00</color>
+    <color>ff60cf91</color>
     <width>1</width>
   </LineStyle>
   <PolyStyle>
-    <color>3f009c00</color>
+    <color>bf8befd9</color>
     <fill>1</fill>
     <outline>1</outline>
   </PolyStyle>
 </Style>
 <Style id="limited">
   <LineStyle>
-    <color>ff009c00</color>
+    <color>ff50981a</color>
     <width>1</width>
   </LineStyle>
   <PolyStyle>
-    <color>7f009c00</color>
+    <color>bf60cf91</color>
     <fill>1</fill>
     <outline>1</outline>
   </PolyStyle>
 </Style>
 <Style id="forbidden">
   <LineStyle>
-    <color>ff009c00</color>
+    <color>ff50981a</color>
     <width>1</width>
   </LineStyle>
   <PolyStyle>
-    <color>bf009c00</color>
+    <color>bf50981a</color>
     <fill>1</fill>
     <outline>1</outline>
   </PolyStyle>

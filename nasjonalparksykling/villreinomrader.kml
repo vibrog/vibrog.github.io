@@ -3,11 +3,11 @@
 <Document id="root_doc">
 <Style id="rein">
   <LineStyle>
-    <color>ff6bb5ff</color>
+    <color>7f0a518c</color>
     <width>1</width>
   </LineStyle>
   <PolyStyle>
-    <color>7f6bb5ff</color>
+    <color>3f0a518c</color>
     <fill>1</fill>
     <outline>1</outline>
   </PolyStyle>
