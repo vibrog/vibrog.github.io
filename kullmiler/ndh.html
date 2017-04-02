@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Kullmiler (NDH)</title>
+<meta name="viewport" content="width=device-width, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+<style type="text/css">body, #map { margin:0; width:100%; height:100%; }</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+var styles = {
+  'fixme': {
+    'resurvey': new ol.style.Style({
+      image: new ol.style.Circle({
+        radius: 6,
+        stroke: new ol.style.Stroke({color: '#ff0080', width: 1}),
+        fill: new ol.style.Fill({color: 'rgba(245,0,128,0.2)'})
+      })
+    })
+  },
+  'historic': {
+    'charcoal_pile': new ol.style.Style({
+      image: new ol.style.Circle({
+        radius: 6,
+        stroke: new ol.style.Stroke({color: '#ff0080', width: 1}),
+        fill: new ol.style.Fill({color: 'rgba(245,0,128,0.6)'})
+      })
+    })
+  }
+};
+function pointStyleFunction(feature, resolution) {
+  for (var key in styles) {
+    var value = feature.get(key);
+    if (value !== undefined) {
+      for (var regexp in styles[key]) {
+        if (new RegExp(regexp).test(value)) {
+          return styles[key][regexp];
+        }
+      }
+    }
+  }
+};
+proj4.defs("EPSG:32633","+proj=utm +zone=33 +datum=WGS84 +units=m +no_defs");
+var proj32633 = ol.proj.get('EPSG:32633');
+proj32633.setExtent([234300, 6634760, 273000, 6690870]);
+ol.proj.addProjection(proj32633);
+var map = new ol.Map({
+  target: 'map',
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        attributions: '<a href="http://kartverket.no/">Kartverket</a>',
+        url: 'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2graatone&zoom={z}&x={x}&y={y}'
+      })
+    }),
+    new ol.layer.Tile({
+      opacity: 0.75,
+      source: new ol.source.TileWMS({
+        attributions: '<a href="https://hoydedata.no/LaserInnsyn/">hoydedata.no</a>',
+        url: 'https://hoydedata.no/arcgis/rest/services/las_dtm_skyggerelieff/ImageServer/exportImage',
+        params: {
+          'f': 'image',
+          'format': 'jpgpng',
+          'renderingRule': '{"rasterFunction":"skyggerelieff"}',
+          'mosaicRule': '{'
+             + '"mosaicMethod":"esriMosaicNorthwest",'
+             + '"where":"LAS_PROJECT_ID IN (521,472,346,124,9,125,416,123,263)",'
+             + '"mosaicOperation":"MT_FIRST"}',
+          'bboxSR': '25833',
+        },
+        projection: proj32633,
+        extents: [234166.433002, 6629388.904332, 279329.199482, 6691457.645583],
+        serverType: 'geoserver'
+      })
+    }),
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        attributions: 'Jan Martin Larsen/<a href="http://abhistorielag.no/">Asker og Bærum historielag</a>, Vidar B. Gundersen, Bjørn Kåre Salvesen, <a href="https://www.baerum.kommune.no/">Bærum kommune</a> (<a href="http://data.norge.no/nlod/">NLOD</a>), Odd Joakim Olsen, <a href="http://kjerraten.no/kjerratmuseet/kolabonner/">Ingunn og Terje Jahr</a>, Tore Vefferstad, Ståle Pinslie,',
+        url: 'https://overpass-api.de/api/interpreter?data=node[historic=charcoal_pile](59.67,10.26,60.28,11.16);out;',
+        format: new ol.format.OSMXML()
+      }),
+      style: pointStyleFunction
+    })
+  ],
+  view: new ol.View({
+    center: ol.proj.fromLonLat([10.45,60]),
+    zoom: 12
+  })
+});
+</script>
+</body>
+</html>
