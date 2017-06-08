@@ -8,10 +8,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.1.1/ol.js" type="text/javascript"></script>
 <style type="text/css">
 body, #map { margin:0; width:100%; height:100%; }
-span.med, span.uten, span.var { border:1px solid black; display:inline-block; width:1.5em; height:.6em; }
+span.med, span.uten, span.var, span.nye { border:1px solid black; display:inline-block; width:1.5em; height:.6em; }
 span.uten { background-color:rgba(217,239,139,.75); border-color:#91cf60; }
 span.var { background-color:rgba(145,207,96,.75); border-color:#1a9850; }
 span.med { background-color:rgba(26,152,80,.75); border-color:#1a9850; }
+span.nye { background-color:rgba(221,141,216,.75); border-color:#cf5ec7; }
 .ol-attribution{ text-align:left !important; }
 </style>
 </head>
@@ -32,22 +33,23 @@ var map = new ol.Map({
         attributions: ''
           + '<br/><span class="uten"></span> Sykling tillatt'
           + '<br/><span class="var"></span> Sykling delvis tillatt'
-          + '<br/><span class="med"></span> Sykling forbudt'
-          + '<br/>Kartdata fra <a href="https://kartkatalog.miljodirektoratet.no/">Naturbase</a>,',
+          + '<br/><span class="med"></span> Sykling forbudt',
         url: 'naturvernomrader.kml',
         format: new ol.format.KML()
       })
     }),
     new ol.layer.Vector({
       source: new ol.source.Vector({
-        attributions: '<br/><span class="nye"></span> Foreslått vern',
+      attributions: ''
+          + '<br/><span class="nye"></span> Foreslått vern'
+          + '<br/>Kartdata fra <a href="https://kartkatalog.miljodirektoratet.no/">Naturbase</a>,',
         url: 'foreslatt_vern.kml',
         format: new ol.format.KML()
       })
     }),
     new ol.layer.Tile({
       source: new ol.source.XYZ({
-        attributions: '<a href="http://labs.strava.com/heatmap/">Strava cycling heatmap</a>',
+        attributions: '<br/><a href="http://labs.strava.com/heatmap/">Strava cycling heatmap</a>',
         url: 'http://globalheat.strava.com/tiles/cycling/color3/{z}/{x}/{y}.png'
       })
     })
