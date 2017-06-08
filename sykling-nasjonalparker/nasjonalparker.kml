@@ -33,11 +33,11 @@
     <outline>1</outline>
   </PolyStyle>
 </Style>
-<Schema name="naturvernomrader_utm33" id="naturvernomrader_utm33">
+<Schema name="ogr" id="ogr">
 	<SimpleField name="IID" type="string"></SimpleField>
 	<SimpleField name="OMRADENAVN" type="string"></SimpleField>
 </Schema>
-<Folder><name>naturvernomrader_utm33</name>
+<Folder>
   <Placemark>
         <styleUrl>#allowed</styleUrl>
 	<ExtendedData><SchemaData schemaUrl="#ogr">
