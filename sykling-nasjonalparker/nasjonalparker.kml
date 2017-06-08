@@ -34,8 +34,8 @@
   </PolyStyle>
 </Style>
 <Schema name="ogr" id="ogr">
-	<SimpleField name="IID" type="string"></SimpleField>
-	<SimpleField name="OMRADENAVN" type="string"></SimpleField>
+	<SimpleField name="IID" type="string"/>
+	<SimpleField name="OMRADENAVN" type="string"/>
 </Schema>
 <Folder>
   <Placemark>
