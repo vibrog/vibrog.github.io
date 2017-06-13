@@ -341,6 +341,7 @@
   <Placemark id="VV00001897">
     <name>Dovrefjell-Sunndalsfjella</name>
     <styleUrl>#limited</styleUrl>
+    <MultiGeometry>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -353,10 +354,6 @@
         </LinearRing>
       </innerBoundaryIs>
     </Polygon>
-  </Placemark>
-  <Placemark id="VV00001897">
-    <name>Dovrefjell-Sunndalsfjella</name>
-    <styleUrl>#limited</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -364,6 +361,7 @@
         </LinearRing>
       </outerBoundaryIs>
     </Polygon>
+    </MultiGeometry>
   </Placemark>
   <Placemark id="VV00001873">
     <name>Rondane</name>
@@ -476,6 +474,7 @@
   <Placemark id="VV00002830">
     <name>Breheimen</name>
     <styleUrl>#limited</styleUrl>
+    <MultiGeometry>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -483,10 +482,6 @@
         </LinearRing>
       </outerBoundaryIs>
     </Polygon>
-  </Placemark>
-  <Placemark id="VV00002830">
-    <name>Breheimen</name>
-    <styleUrl>#allowed</styleUrl>
     <Polygon>
       <outerBoundaryIs>
         <LinearRing>
@@ -494,6 +489,7 @@
         </LinearRing>
       </outerBoundaryIs>
     </Polygon>
+  </MultiGeometry>
   </Placemark>
   <Placemark id="VV00000668">
     <name>Jostedalsbreen</name>
