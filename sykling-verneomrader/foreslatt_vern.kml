@@ -12,7 +12,7 @@
   </PolyStyle>
 </Style>
 <Folder>
-  <Placemark id="VP00000002">
+  <Placemark>
     <name>Tysfjord - Hellemo planområde</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -23,7 +23,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000002">
+  <Placemark>
     <name>Tysfjord - Hellemo planområde</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -34,7 +34,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000002">
+  <Placemark>
     <name>Tysfjord - Hellemo planområde</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -45,7 +45,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000011">
+  <Placemark>
     <name>Iesjávri</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -56,7 +56,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000023">
+  <Placemark>
     <name>Steinvatnmyran</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -67,7 +67,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000024">
+  <Placemark>
     <name>Goahteluoppal</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -78,7 +78,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000025">
+  <Placemark>
     <name>Stuorajávri</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -89,7 +89,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000026">
+  <Placemark>
     <name>Náhpolsáiva</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -100,7 +100,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000027">
+  <Placemark>
     <name>Áidejávri</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -111,7 +111,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000029">
+  <Placemark>
     <name>Ginaljeaggi</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -122,7 +122,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000031">
+  <Placemark>
     <name>Opmoáhpi</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -133,7 +133,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000032">
+  <Placemark>
     <name>Suoluvuopmi</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -144,7 +144,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000035">
+  <Placemark>
     <name>Sennalandet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -155,7 +155,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000036">
+  <Placemark>
     <name>Lille Porsangen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -166,7 +166,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000041">
+  <Placemark>
     <name>Stormyra-Stoppelfjorden</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -177,7 +177,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000043">
+  <Placemark>
     <name>Luostejohka</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -188,7 +188,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000051">
+  <Placemark>
     <name>Vieksa</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -199,7 +199,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000052">
+  <Placemark>
     <name>Morssajeaggi, Cuosgaljeaggi og Madarjeaggi</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -210,7 +210,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000057">
+  <Placemark>
     <name>Suovkajeaggi og Stuorajeaggi</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -221,7 +221,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000061">
+  <Placemark>
     <name>Skrøytnesmyra</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -232,7 +232,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000062">
+  <Placemark>
     <name>Kibymyra</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -243,7 +243,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000074">
+  <Placemark>
     <name>Jeakká</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -254,7 +254,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000077">
+  <Placemark>
     <name>Korsmyra</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -265,7 +265,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000313">
+  <Placemark>
     <name>Inngripan</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -276,7 +276,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000347">
+  <Placemark>
     <name>Draugneset-Singla</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -287,7 +287,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000348">
+  <Placemark>
     <name>Draugneset-Singla</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -298,7 +298,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000349">
+  <Placemark>
     <name>Kvitfjellet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -309,7 +309,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000350">
+  <Placemark>
     <name>Gjøvarden</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -320,7 +320,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000351">
+  <Placemark>
     <name>Oksfjorddalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -331,7 +331,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000352">
+  <Placemark>
     <name>Rødbergan</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -342,7 +342,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000353">
+  <Placemark>
     <name>Tønsvikelva</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -353,7 +353,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000354">
+  <Placemark>
     <name>Brattfjellet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -364,7 +364,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000355">
+  <Placemark>
     <name>Nymoen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -375,7 +375,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000356">
+  <Placemark>
     <name>Elvekrakneset</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -386,7 +386,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000357">
+  <Placemark>
     <name>Gjerdeelva</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -397,7 +397,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000358">
+  <Placemark>
     <name>Akka</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -408,7 +408,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000359">
+  <Placemark>
     <name>Gullhavøra</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -419,7 +419,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000360">
+  <Placemark>
     <name>Sollia-Høglia</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -430,7 +430,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000361">
+  <Placemark>
     <name>Øverbygd</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -441,7 +441,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000362">
+  <Placemark>
     <name>Kastnesåsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -452,7 +452,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000363">
+  <Placemark>
     <name>Rydningtverrelvlia</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -463,7 +463,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000364">
+  <Placemark>
     <name>Rydningtverrelva</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -474,7 +474,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000365">
+  <Placemark>
     <name>Devdislia</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -485,7 +485,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000366">
+  <Placemark>
     <name>Storøya</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -496,7 +496,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000367">
+  <Placemark>
     <name>Høgtverrelva</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -507,7 +507,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000368">
+  <Placemark>
     <name>Høgtverrelva</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -518,7 +518,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000369">
+  <Placemark>
     <name>Bjørkås</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -529,7 +529,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000370">
+  <Placemark>
     <name>Blåberget</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -540,7 +540,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000371">
+  <Placemark>
     <name>Lia-Reite</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -551,7 +551,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000372">
+  <Placemark>
     <name>Bergskletten</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -562,7 +562,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000373">
+  <Placemark>
     <name>Klyvimyrbekken</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -573,7 +573,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000374">
+  <Placemark>
     <name>Årsteinlia</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -584,7 +584,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000375">
+  <Placemark>
     <name>Ramneberget</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -595,7 +595,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000376">
+  <Placemark>
     <name>Bjørnbåslia</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -606,7 +606,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000377">
+  <Placemark>
     <name>Blåfjell</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -617,7 +617,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000378">
+  <Placemark>
     <name>Lavangsvatnet nord</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -628,7 +628,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000379">
+  <Placemark>
     <name>Lavangsvatnet nord</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -639,7 +639,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000381">
+  <Placemark>
     <name>Lakselia-Ryggelia</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -650,7 +650,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000386">
+  <Placemark>
     <name>Storelva-Bekkamyra</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -661,7 +661,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000404">
+  <Placemark>
     <name>Kverndalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -672,7 +672,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000410">
+  <Placemark>
     <name>Båsdalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -683,7 +683,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000414">
+  <Placemark>
     <name>Finntjønndalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -694,7 +694,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000416">
+  <Placemark>
     <name>Rennen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -705,7 +705,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000418">
+  <Placemark>
     <name>Leksa</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -716,7 +716,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000421">
+  <Placemark>
     <name>Leirsjøen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -727,7 +727,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000423">
+  <Placemark>
     <name>Fjelløya</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -738,7 +738,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000424">
+  <Placemark>
     <name>Malså-Høgmannen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -749,7 +749,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000425">
+  <Placemark>
     <name>Torsvatnet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -760,7 +760,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000426">
+  <Placemark>
     <name>Brekka-Tromselva</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -771,7 +771,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000427">
+  <Placemark>
     <name>Nesådalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -782,7 +782,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000428">
+  <Placemark>
     <name>Høysjøen-Høgmannen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -793,7 +793,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000430">
+  <Placemark>
     <name>Muru</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -804,7 +804,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000433">
+  <Placemark>
     <name>Skograuberga</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -815,7 +815,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000439">
+  <Placemark>
     <name>Høgmannen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -826,7 +826,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000442">
+  <Placemark>
     <name>Merralia</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -837,7 +837,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000443">
+  <Placemark>
     <name>Saltfjellet-Svartisen utvidelse Austerdalsvatnet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -848,7 +848,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000444">
+  <Placemark>
     <name>Saltfjellet-Svartisen utvidelse Rana og Rødøy</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -859,7 +859,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000444">
+  <Placemark>
     <name>Saltfjellet-Svartisen utvidelse Rana og Rødøy</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -870,7 +870,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000444">
+  <Placemark>
     <name>Saltfjellet-Svartisen utvidelse Rana og Rødøy</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -881,7 +881,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000444">
+  <Placemark>
     <name>Saltfjellet-Svartisen utvidelse Rana og Rødøy</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -892,7 +892,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000447">
+  <Placemark>
     <name>Guvvacohkka</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -903,7 +903,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000448">
+  <Placemark>
     <name>Ráitevárri</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -914,7 +914,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000449">
+  <Placemark>
     <name>Stuoráhpi og Geatkájeaggi</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -925,7 +925,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000449">
+  <Placemark>
     <name>Stuoráhpi og Geatkájeaggi</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -936,7 +936,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000450">
+  <Placemark>
     <name>Anárjohka naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -947,7 +947,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000451">
+  <Placemark>
     <name>Guohcajeaggi</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -958,7 +958,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000452">
+  <Placemark>
     <name>Anárjohka nasjonalpark</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -969,7 +969,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000453">
+  <Placemark>
     <name>Lopphavet - transekt 1</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -980,7 +980,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000454">
+  <Placemark>
     <name>Lopphavet - transekt 2</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -991,7 +991,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000455">
+  <Placemark>
     <name>Lopphavet - transekt 3</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -1002,7 +1002,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000456">
+  <Placemark>
     <name>Ytre Karlsøy</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -7093,7 +7093,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000457">
+  <Placemark>
     <name>Lopphavet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -10694,7 +10694,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000458">
+  <Placemark>
     <name>Rystraumen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -10740,7 +10740,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000459">
+  <Placemark>
     <name>Rossfjordstraumen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -10801,7 +10801,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000460">
+  <Placemark>
     <name>Kaldvågfjorden og Innhavet - kart</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11057,7 +11057,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000461">
+  <Placemark>
     <name>Karlsøyvær</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11378,7 +11378,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000463">
+  <Placemark>
     <name>Nordfjorden i Rødøy</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11399,7 +11399,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000464">
+  <Placemark>
     <name>Vistenfjorden</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11435,7 +11435,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000466">
+  <Placemark>
     <name>Skarnsundet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11451,7 +11451,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000468">
+  <Placemark>
     <name>Børgin</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11517,7 +11517,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000530">
+  <Placemark>
     <name>Rauer-Søster</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11528,7 +11528,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000556">
+  <Placemark>
     <name>Krossfjorden</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11539,7 +11539,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000557">
+  <Placemark>
     <name>Ytre Hardangerfjord</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11560,7 +11560,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000558">
+  <Placemark>
     <name>Lurefjorden og Lindåsosane</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11646,7 +11646,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11657,7 +11657,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11668,7 +11668,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11679,7 +11679,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11690,7 +11690,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11701,7 +11701,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11712,7 +11712,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11723,7 +11723,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11734,7 +11734,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11745,7 +11745,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11756,7 +11756,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11767,7 +11767,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11778,7 +11778,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11789,7 +11789,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11800,7 +11800,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11811,7 +11811,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11822,7 +11822,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11833,7 +11833,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11844,7 +11844,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11855,7 +11855,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11866,7 +11866,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11877,7 +11877,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11888,7 +11888,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11899,7 +11899,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11910,7 +11910,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11921,7 +11921,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11932,7 +11932,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11943,7 +11943,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11954,7 +11954,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11965,7 +11965,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11976,7 +11976,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11987,7 +11987,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -11998,7 +11998,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000568">
+  <Placemark>
     <name>Tjongspollen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12009,7 +12009,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000570">
+  <Placemark>
     <name>Lone</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12025,7 +12025,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000570">
+  <Placemark>
     <name>Lone</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12036,7 +12036,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000570">
+  <Placemark>
     <name>Lone</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12047,7 +12047,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000570">
+  <Placemark>
     <name>Lone</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12058,7 +12058,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000570">
+  <Placemark>
     <name>Lone</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12069,7 +12069,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000570">
+  <Placemark>
     <name>Lone</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12080,7 +12080,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000570">
+  <Placemark>
     <name>Lone</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12091,7 +12091,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000574">
+  <Placemark>
     <name>Finsåsmarka</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12102,7 +12102,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000580">
+  <Placemark>
     <name>Raudtjernfjellet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12113,7 +12113,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000584">
+  <Placemark>
     <name>Øytjernet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12124,7 +12124,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000585">
+  <Placemark>
     <name>Vinstraelva</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12135,7 +12135,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000586">
+  <Placemark>
     <name>Islandselvi</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12146,7 +12146,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000591">
+  <Placemark>
     <name>Fosseteråsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12157,7 +12157,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000591">
+  <Placemark>
     <name>Fosseteråsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12168,7 +12168,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000596">
+  <Placemark>
     <name>Eldåa</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12179,7 +12179,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000597">
+  <Placemark>
     <name>Tøråsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12190,7 +12190,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000598">
+  <Placemark>
     <name>Buberget</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12201,7 +12201,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000599">
+  <Placemark>
     <name>Granbekken-Drevja</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12212,7 +12212,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000600">
+  <Placemark>
     <name>Valsjøberget-Andråsberget</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12223,7 +12223,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000601">
+  <Placemark>
     <name>Gråkletten</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12234,7 +12234,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000602">
+  <Placemark>
     <name>Regnåsen-Hisåsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12245,7 +12245,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000603">
+  <Placemark>
     <name>Skarvberget-Tallåsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12256,7 +12256,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000604">
+  <Placemark>
     <name>Hemberget</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12267,7 +12267,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000610">
+  <Placemark>
     <name>Lille Sølensjø</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12278,7 +12278,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000615">
+  <Placemark>
     <name>Mølmannsdalslia-utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12294,7 +12294,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000616">
+  <Placemark>
     <name>Holtsåsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12305,7 +12305,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000617">
+  <Placemark>
     <name>Malfjell</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12316,7 +12316,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000618">
+  <Placemark>
     <name>Høgvollene</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12327,7 +12327,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000619">
+  <Placemark>
     <name>Fisketjønnjuvet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12338,7 +12338,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000620">
+  <Placemark>
     <name>Asgjerdstigfjell-utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12349,7 +12349,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000621">
+  <Placemark>
     <name>Sandvikheia</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12360,7 +12360,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000622">
+  <Placemark>
     <name>Kiseåsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12371,7 +12371,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000623">
+  <Placemark>
     <name>Vefallnåsa</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12382,7 +12382,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000624">
+  <Placemark>
     <name>Verdensløpet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12393,7 +12393,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000625">
+  <Placemark>
     <name>Andrå</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12404,7 +12404,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000626">
+  <Placemark>
     <name>Svendstuøyene</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12415,7 +12415,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000627">
+  <Placemark>
     <name>Juvberget (utvidelse)</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12426,7 +12426,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000628">
+  <Placemark>
     <name>Halasbukjølen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12437,7 +12437,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000629">
+  <Placemark>
     <name>Dokka naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12448,7 +12448,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000630">
+  <Placemark>
     <name>Øystre Slidreåne naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12459,7 +12459,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000630">
+  <Placemark>
     <name>Øystre Slidreåne naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12470,7 +12470,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000630">
+  <Placemark>
     <name>Øystre Slidreåne naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12481,7 +12481,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000631">
+  <Placemark>
     <name>Kalvberget naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12492,7 +12492,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000632">
+  <Placemark>
     <name>Gjøvika naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12503,7 +12503,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000633">
+  <Placemark>
     <name>Høvringslia naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12514,7 +12514,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000633">
+  <Placemark>
     <name>Høvringslia naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12525,7 +12525,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000634">
+  <Placemark>
     <name>Budeiberget naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12536,7 +12536,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000634">
+  <Placemark>
     <name>Budeiberget naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12547,7 +12547,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000635">
+  <Placemark>
     <name>Bjønnhaugen naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12558,7 +12558,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000636">
+  <Placemark>
     <name>Paradiskollen naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12569,7 +12569,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000637">
+  <Placemark>
     <name>Breie naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12580,7 +12580,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000638">
+  <Placemark>
     <name>Solbrålia naturreservat</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12591,7 +12591,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000639">
+  <Placemark>
     <name>Olsengelva</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12602,7 +12602,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000640">
+  <Placemark>
     <name>Utvidelse Finnsåsmarka</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12613,7 +12613,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000640">
+  <Placemark>
     <name>Utvidelse Finnsåsmarka</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12624,7 +12624,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000641">
+  <Placemark>
     <name>Folldalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12635,7 +12635,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000642">
+  <Placemark>
     <name>Skavdalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12646,7 +12646,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000643">
+  <Placemark>
     <name>Røsheia</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12657,7 +12657,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000644">
+  <Placemark>
     <name>Kolåsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12668,7 +12668,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000645">
+  <Placemark>
     <name>Utvidelse Mjøsund</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12679,7 +12679,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000646">
+  <Placemark>
     <name>Storengvatna</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12690,7 +12690,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000647">
+  <Placemark>
     <name>Utvidelse Almdalen-Ekorndalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12701,7 +12701,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000648">
+  <Placemark>
     <name>Utvidelse Råbesadalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12712,7 +12712,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000648">
+  <Placemark>
     <name>Utvidelse Råbesadalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12723,7 +12723,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000649">
+  <Placemark>
     <name>Kammen-Kaldal</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12734,7 +12734,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000650">
+  <Placemark>
     <name>Fergeli</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12745,7 +12745,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000651">
+  <Placemark>
     <name>Alteskardet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12756,7 +12756,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000652">
+  <Placemark>
     <name>Utvidelse Lødding</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12767,7 +12767,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000652">
+  <Placemark>
     <name>Utvidelse Lødding</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12778,7 +12778,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000653">
+  <Placemark>
     <name>Åfarhaugen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12789,7 +12789,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000654">
+  <Placemark>
     <name>Durmålhaugen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12800,7 +12800,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000655">
+  <Placemark>
     <name>Hisdalen utvidding</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12811,7 +12811,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000656">
+  <Placemark>
     <name>Lien nordre</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12822,7 +12822,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000657">
+  <Placemark>
     <name>Nedre Rønningkåsene</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12833,7 +12833,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000658">
+  <Placemark>
     <name>Solhomfjell - Utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12849,7 +12849,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000659">
+  <Placemark>
     <name>Veikulåsen Utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12860,7 +12860,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000660">
+  <Placemark>
     <name>Juvsåsen Utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12871,7 +12871,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000661">
+  <Placemark>
     <name>Ramfoss Utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12882,7 +12882,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000662">
+  <Placemark>
     <name>Langåsen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12893,7 +12893,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000663">
+  <Placemark>
     <name>Tronstad Utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12904,7 +12904,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000663">
+  <Placemark>
     <name>Tronstad Utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12915,7 +12915,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000663">
+  <Placemark>
     <name>Tronstad Utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12926,7 +12926,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000664">
+  <Placemark>
     <name>Trillemarka-Rollagsfjell Utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12937,7 +12937,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000665">
+  <Placemark>
     <name>Storebølingen og Surtebergflaget</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12948,7 +12948,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000666">
+  <Placemark>
     <name>Alternativ 1 Hjerkinn</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12959,7 +12959,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000667">
+  <Placemark>
     <name>Alternativ 1 Fokstugu utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12970,7 +12970,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000668">
+  <Placemark>
     <name>Alternativ 1 Dovrefjell - Sunndalsfjella utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12981,7 +12981,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000669">
+  <Placemark>
     <name>Alternativ 2 Fokstugu utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -12992,7 +12992,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000670">
+  <Placemark>
     <name>Alternativ 2 Hjerkinn</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -13003,7 +13003,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000670">
+  <Placemark>
     <name>Alternativ 2 Hjerkinn</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -13014,7 +13014,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000671">
+  <Placemark>
     <name>Alternativ 2 Snøheimvegen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -13025,7 +13025,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000672">
+  <Placemark>
     <name>Alternativ 2 Dovrefjell - Sunndalsfjella utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -13036,7 +13036,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000672">
+  <Placemark>
     <name>Alternativ 2 Dovrefjell - Sunndalsfjella utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -13047,7 +13047,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000673">
+  <Placemark>
     <name>Prekestolen med Ryggevannene Utvidelse</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -13063,7 +13063,7 @@
       </innerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000674">
+  <Placemark>
     <name>Skandøla</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -13074,7 +13074,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000675">
+  <Placemark>
     <name>Ertsrudberget</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -13085,7 +13085,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000676">
+  <Placemark>
     <name>Ruud</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
@@ -13096,8 +13096,8 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000677">
-    <name>Skotjernfjellet og snellingsrøysene Utvidelse</name>
+  <Placemark>
+    <name>Skotjernfjellet og Snellingsrøysene (utvidelse)</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
       <outerBoundaryIs>
@@ -13107,8 +13107,8 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000677">
-    <name>Skotjernfjellet og snellingsrøysene Utvidelse</name>
+  <Placemark>
+    <name>Skotjernfjellet og Snellingsrøysene (utvidelse)</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
       <outerBoundaryIs>
@@ -13118,7 +13118,7 @@
       </outerBoundaryIs>
     </Polygon>
   </Placemark>
-  <Placemark id="VP00000678">
+  <Placemark>
     <name>Styggdalen</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
