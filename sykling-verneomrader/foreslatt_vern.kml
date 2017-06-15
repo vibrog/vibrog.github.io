@@ -12103,17 +12103,6 @@
     </Polygon>
   </Placemark>
   <Placemark>
-    <name>Raudtjernfjellet</name>
-    <styleUrl>#proposed</styleUrl>
-    <Polygon>
-      <outerBoundaryIs>
-        <LinearRing>
-          <coordinates>9.42520,59.63523 9.43874,59.63410 9.44100,59.63475 9.44582,59.63448 9.44660,59.63105 9.45222,59.63023 9.45458,59.62877 9.45525,59.62417 9.44534,59.62384 9.44016,59.62075 9.44615,59.61630 9.44787,59.61399 9.45105,59.61289 9.44345,59.61042 9.44542,59.60899 9.44491,59.60871 9.44363,59.60858 9.44215,59.60822 9.43985,59.60839 9.43656,59.61326 9.43579,59.61489 9.43115,59.62224 9.42799,59.62777 9.42520,59.63523</coordinates>
-        </LinearRing>
-      </outerBoundaryIs>
-    </Polygon>
-  </Placemark>
-  <Placemark>
     <name>Øytjernet</name>
     <styleUrl>#proposed</styleUrl>
     <Polygon>
