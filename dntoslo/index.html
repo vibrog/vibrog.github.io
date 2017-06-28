@@ -1,19 +1,16 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="no">
 <head>
 <title>Blåstier i Oslomarka (laget for DNT Oslo)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-<!-- bring in the OpenLayers javascript library -->
+<!-- Bring in the OpenLayers javascript library -->
 <link rel="stylesheet" href="http://dev.openlayers.org/releases/OpenLayers-2.13.1/theme/default/style.css" type="text/css"/>
-<script src="http://dev.openlayers.org/releases/OpenLayers-2.13.1/OpenLayers.js"></script>
+<script src="http://dev.openlayers.org/releases/OpenLayers-2.13.1/OpenLayers.js" type="text/javascript"></script>
 
-<!-- bring in the map layers -->
-<script src="http://tile.tusvik.no/js/tile.tusvik.js"></script>
-
-<!-- bring in Proj4 to set UTM zone 32 (EPSG:32632) appropriately -->
+<!-- Bring in Proj4 to set UTM zone 32 (EPSG:32632) appropriately -->
 <script type="text/javascript" src="http://svn.osgeo.org/metacrs/proj4js/trunk/lib/proj4js-compressed.js"></script>
 
 <script type="text/javascript">
@@ -71,12 +68,15 @@ function init() {
       new OpenLayers.Control.Permalink({anchor: true})
     ],
     layers: [
-      new OpenLayers.Layer.Tusvik("DNT trails"),
-      new OpenLayers.Layer.Tusvik("Hiking")
+      new OpenLayers.Layer.XYZ(
+        "Kartverket",
+        "http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2&zoom=${z}&x=${x}&y=${y}",
+        {transitionEffect:"resize",
+         attribution: '<a href="http://kartverket.no/">Kartverket</a>'})
     ]
   });
 
- // Add vector layer
+  // Add vector layer
   var boundsStyle = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults(
     { strokeColor: "#0c5", strokeWidth: 3, strokeOpacity: .85 },
     OpenLayers.Feature.Vector.style["default"]));
@@ -91,18 +91,11 @@ function init() {
   });
   map.addLayer(bounds);
 
-  map.addLayer(new OpenLayers.Layer.XYZ(
-    "Sherpa",
-    "http://mt3.turistforeningen.no/prod/trail_summer/${z}/${x}/${y}.png",
-    {isBaseLayer: false, visibility: false,
-     attribution: '<a href="http://www.turistforeningen.no/">DNT</a>'}));
-
   var lonLat = new OpenLayers.LonLat(lon, lat).transform(
     new OpenLayers.Projection("EPSG:4326"),
     map.getProjectionObject());
   if( ! map.getCenter() ){
     map.setCenter(lonLat, zoom);
-    if (layers) { setActiveLayers(layers); }
   }
 
 }
