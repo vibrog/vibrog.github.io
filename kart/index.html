@@ -64,7 +64,22 @@ var map = new ol.Map({
             },
             extents: [234166.433002, 6629388.904332, 279329.199482, 6691457.645583],
             serverType: 'geoserver'
-          })
+          }),
+          maxResolution: 150
+        }),
+        new ol.layer.Tile({
+          opacity: 0.7,
+          source: new ol.source.TileWMS({
+            attributions: '<a href="https://kilden.nibio.no/">NIBIO</a>',
+            url: 'https://wms.nibio.no/cgi-bin/ar250',
+            params: {
+              'format': 'image/png',
+              'layers': 'Skogbonitet',
+            },
+            extents: [234166.433002, 6629388.904332, 279329.199482, 6691457.645583],
+            serverType: 'geoserver'
+          }),
+          minResolution: 150
         })
       ]
     }),
