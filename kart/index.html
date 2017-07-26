@@ -41,14 +41,32 @@ var map = new ol.Map({
         url: 'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2&zoom={z}&x={x}&y={y}'
       })
     }),
-    new ol.layer.Tile({
-      title: 'Kartverket topo grå',
+    new ol.layer.Group({
+      title: 'Bonitet',
       type: 'base',
+      combine: true,
       visible: false,
-      source: new ol.source.XYZ({
-        attributions: '<a href="https://kartverket.no/">Kartverket</a>',
-        url: 'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2graatone&zoom={z}&x={x}&y={y}'
-      })
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.XYZ({
+            attributions: '<a href="https://kartverket.no/">Kartverket</a>',
+            url: 'http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo2graatone&zoom={z}&x={x}&y={y}'
+          })
+        }),
+        new ol.layer.Tile({
+          opacity: 0.7,
+          source: new ol.source.TileWMS({
+            attributions: '<a href="https://kilden.nibio.no/">NIBIO</a>',
+            url: 'https://wms.nibio.no/cgi-bin/ar50',
+            params: {
+              'format': 'image/png',
+              'layers': 'Skogbonitet',
+            },
+            extents: [234166.433002, 6629388.904332, 279329.199482, 6691457.645583],
+            serverType: 'geoserver'
+          })
+        })
+      ]
     }),
     new ol.layer.Tile({
       title: 'OSM turstier',
