@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Setre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://openlayers.org/en/v3.19.0/css/ol.css" type="text/css"/>
+<script src="https://openlayers.org/en/v3.19.0/build/ol.js"></script>
+<style>body, #map { margin:0; padding:0; width:100%; height:100%; }</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+var style = new ol.style.Style({
+  image: new ol.style.Circle({
+    radius: 6,
+    stroke: new ol.style.Stroke({color: '#5a2d0c', width: 1}),
+    fill: new ol.style.Fill({color: 'rgba(90,45,12,0.6)'})
+  }),
+  text: new ol.style.Text({
+font: '13px Dyslexie,"Trebuchet MS",Calibri,sans-serif',
+    fill: new ol.style.Fill({color: '#5a2d0c'}),
+    stroke: new ol.style.Stroke({color: '#fff', width: 1.5}),
+    textAlign: 'left',
+    offsetX: 10
+  })
+});
+var map = new ol.Map({
+  target: 'map',
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        attributions: '<a href="http://kartverket.no/">Kartverket</a>',
+        url: 'https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}'
+      })
+    }),
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        attributions: 'Vidar B. Gundersen',
+        url: 'https://overpass-api.de/api/interpreter?data=node[historic=shieling](59.67,10.26,60.28,11.16);out;',
+        format: new ol.format.OSMXML()
+      }),
+      style: function(feature, resolution) {
+        style.getText().setText(resolution < 50 ? feature.get('name') : '');
+        style.getImage().setOpacity(feature.get('fixme')=='resurvey' ? 0.2 : 1);
+        return style;
+      }
+    })
+  ],
+  view: new ol.View({
+    center: ol.proj.fromLonLat([10.45,60]),
+    zoom: 12
+  })
+});
+</script>
+</body>
+</html>
