@@ -14,7 +14,7 @@ var style = new ol.style.Style({
   image: new ol.style.Circle({
     radius: 6,
     stroke: new ol.style.Stroke({color: '#5a2d0c', width: 1}),
-    fill: new ol.style.Fill({color: 'rgba(90,45,12,0.6)'})
+    fill: new ol.style.Fill({color: 'rgba(90,45,12,0.8)'})
   }),
   text: new ol.style.Text({
     font: '8pt Dyslexie,"Trebuchet MS",Calibri,sans-serif',
@@ -41,7 +41,7 @@ var map = new ol.Map({
       }),
       style: function(feature, resolution) {
         style.getText().setText(resolution < 25 ? feature.get('name') : '');
-        style.getImage().setOpacity(feature.get('fixme')=='resurvey' ? 0.2 : 1);
+        style.getImage().setOpacity(feature.get('fixme')=='position' ? 0.5 : 0.8);
         return style;
       }
     })
