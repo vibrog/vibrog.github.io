@@ -30,7 +30,20 @@ var map = new ol.Map({
     new ol.layer.Tile({
       source: new ol.source.XYZ({
         attributions: '<a href="http://kartverket.no/">Kartverket</a>',
-        url: 'https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}'
+        url: 'https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4graatone&zoom={z}&x={x}&y={y}'
+      })
+    }),
+    new ol.layer.Tile({
+      opacity: 0.5,
+      source: new ol.source.TileWMS({
+        attributions: '<a href="https://kilden.nibio.no/">NIBIO</a>',
+        url: 'https://wms.nibio.no/cgi-bin/ar50',
+        params: {
+          'format': 'image/png',
+          'layers': 'Skogbonitet',
+        },
+        extents: [234166.433002, 6629388.904332, 279329.199482, 6691457.645583],
+        serverType: 'geoserver'
       })
     }),
     new ol.layer.Vector({
