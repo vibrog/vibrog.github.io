@@ -36,7 +36,7 @@ var map = new ol.Map({
     new ol.layer.Vector({
       source: new ol.source.Vector({
         attributions: 'Vidar B. Gundersen',
-        url: 'https://overpass-api.de/api/interpreter?data=node[historic=shieling](59.67,10.26,60.28,11.16);out;',
+        url: 'https://overpass-api.de/api/interpreter?data=node[historic=shieling](59.67,9.92,60.28,11.16);out;',
         format: new ol.format.OSMXML()
       }),
       style: function(feature, resolution) {
@@ -47,8 +47,8 @@ var map = new ol.Map({
     })
   ],
   view: new ol.View({
-    center: ol.proj.fromLonLat([10.45,60]),
-    zoom: 12
+    center: ol.proj.fromLonLat([10.67,60.054]),
+    zoom: 10
   })
 });
 </script>
