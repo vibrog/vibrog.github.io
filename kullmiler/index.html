@@ -49,7 +49,7 @@ var map = new ol.Map({
     new ol.layer.Tile({
       source: new ol.source.XYZ({
         attributions: '<a href="http://kartverket.no/">Kartverket</a>',
-        url: 'https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}'
+        url: 'https://cache.kartverket.no/v1/wmts/1.0.0/topo/default/webmercator/{z}/{y}/{x}.png'
       })
     }),
     new ol.layer.Vector({
