@@ -19,11 +19,11 @@
   .area-btn {
     background: rgba(0,0,0,0.12);
     border: 1px solid rgba(0,0,0,0.25);
-    border-radius: 8px;
+    border-radius: 6px;
     color: #111;
     cursor: pointer;
     font-size: 14px;
-    padding: 6px 14px;
+    padding: 6px 12px;
     backdrop-filter: blur(6px);
     display: flex; align-items: center; gap: 6px;
     font-family: sans-serif;
@@ -33,10 +33,10 @@
 
   .dropdown {
     position: absolute;
-    top: 54px; left: 16px;
+    top: 54px; left: 72px;
     background: rgba(240,240,240,0.95);
     border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
     z-index: 20;
     display: none;
@@ -55,18 +55,8 @@
   .dropdown-item.active { background: rgba(0,0,0,0.13); font-weight: 500; }
 
   .info-btn {
-    background: rgba(0,0,0,0.12);
-    border: 1px solid rgba(0,0,0,0.25);
-    border-radius: 8px;
-    color: #111;
-    font-size: 18px;
-    padding: 6px 12px;
     text-decoration: none;
-    font-family: sans-serif;
-    flex: 0 0 auto;
-    line-height: 1;
   }
-  .info-btn:hover { background: rgba(0,0,0,0.22); }
 
   .overlay {
     position: absolute;
@@ -79,8 +69,9 @@
     background: rgba(0,0,0,0.12);
     border: 1px solid rgba(0,0,0,0.25);
     border-radius: 6px; color: #111; cursor: pointer;
-    font-size: 16px; padding: 8px 16px; white-space: nowrap;
+    font-size: 14px; padding: 4px 12px; white-space: nowrap;
     font-family: sans-serif; flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: center;
   }
   .btn:hover { background: rgba(0,0,0,0.22); }
   .btn:active { transform: scale(0.97); }
@@ -111,9 +102,9 @@
   <img class="slide-img" id="slide-img" src="" alt="Strømkart" />
 
   <div class="top-left">
-    <a class="info-btn" target="_blank"
+    <a class="btn info-btn" target="_blank"
        title="Strømvarselet er hentet fra FjordOs"
-       href="https://fjordos.usn.no/">&#9432;</a>
+       href="https://fjordos.usn.no/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></a>
     <button class="area-btn" id="area-btn">
       <span id="area-label">Drammensfjorden</span>
       <span>&#9662;</span>
@@ -122,7 +113,7 @@
   <div class="dropdown" id="dropdown"></div>
 
   <div class="overlay">
-    <button class="btn" id="btn-play">&#x23F5;</button>
+    <button class="btn" id="btn-play"></button>
     <input type="range" id="time-slider" min="0" max="27" step="1" value="0" />
   </div>
 </div>
@@ -147,12 +138,14 @@
   let currentArea = 5;
   let current = 0, playing = false, timer = null, speed = 750;
 
-  const img      = document.getElementById('slide-img');
-  const btnPlay  = document.getElementById('btn-play');
-  const slider   = document.getElementById('time-slider');
-  const areaBtn  = document.getElementById('area-btn');
+  const img = document.getElementById('slide-img');
+  const btnPlay = document.getElementById('btn-play');
+  const slider = document.getElementById('time-slider');
+  const areaBtn = document.getElementById('area-btn');
   const areaLabel = document.getElementById('area-label');
   const dropdown = document.getElementById('dropdown');
+  const iconPlay  = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+  const iconStop = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 
   function closestHourIndex() {
     const now = new Date();
@@ -196,13 +189,13 @@
 
   function startPlay() {
     playing = true;
-    btnPlay.innerHTML = '&#x23F8;';
+    btnPlay.innerHTML = iconStop;
     timer = setInterval(() => goto(current >= hours.length - 1 ? 0 : current + 1), speed);
   }
 
   function stopPlay() {
     playing = false;
-    btnPlay.innerHTML = '&#x23F5;';
+    btnPlay.innerHTML = iconPlay;
     clearInterval(timer);
   }
 
@@ -214,6 +207,7 @@
   });
 
   buildDropdown();
+  btnPlay.innerHTML = iconPlay;
   goto(closestHourIndex());
 </script>
 </body>
