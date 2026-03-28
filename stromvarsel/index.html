@@ -6,8 +6,8 @@
 <title>Strømvarsel Oslofjorden</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #fff; width: 100vw; height: 100vh; overflow: hidden; }
-  .wrap { position: relative; width: 100vw; height: 100vh; }
+  body { background: #fff; overflow: hidden; }
+  body, .wrap { width: 100vw; height: 100vh; }
   .slide-img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
   .top-left {
@@ -16,24 +16,10 @@
     display: flex; align-items: center; gap: 8px;
     z-index: 10;
   }
-  .area-btn {
-    background: rgba(0,0,0,0.12);
-    border: 1px solid rgba(0,0,0,0.25);
-    border-radius: 6px;
-    color: #111;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 6px 12px;
-    backdrop-filter: blur(6px);
-    display: flex; align-items: center; gap: 6px;
-    font-family: sans-serif;
-    text-decoration: none;
-  }
-  .area-btn:hover { background: rgba(0,0,0,0.22); }
 
   .dropdown {
     position: absolute;
-    top: 54px; left: 72px;
+    top: 38px; left: 56px;
     background: rgba(240,240,240,0.95);
     border: 1px solid rgba(0,0,0,0.15);
     border-radius: 6px;
@@ -54,10 +40,6 @@
   .dropdown-item:hover { background: rgba(0,0,0,0.08); }
   .dropdown-item.active { background: rgba(0,0,0,0.13); font-weight: 500; }
 
-  .info-btn {
-    text-decoration: none;
-  }
-
   .overlay {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -75,21 +57,25 @@
   }
   .btn:hover { background: rgba(0,0,0,0.22); }
   .btn:active { transform: scale(0.97); }
+  .area-btn {
+    padding: 6px 12px;
+    backdrop-filter: blur(6px);
+    gap: 6px;
+  }
+  .info-btn, .area-btn {
+    text-decoration: none;
+  }
+
   #time-slider {
     flex: 1;
-    -webkit-appearance: none; appearance: none;
     height: 5px; border-radius: 3px;
     background: rgba(0,0,0,0.15);
     cursor: pointer; outline: none;
   }
-  #time-slider::-webkit-slider-thumb {
+  #time-slider, #time-slider::-webkit-slider-thumb {
     -webkit-appearance: none; appearance: none;
-    width: 22px; height: 22px; border-radius: 50%;
-    background: rgba(0,0,0,0.55);
-    border: 2px solid rgba(255,255,255,0.6);
-    cursor: grab;
   }
-  #time-slider::-moz-range-thumb {
+  #time-slider::-webkit-slider-thumb, #time-slider::-moz-range-thumb {
     width: 22px; height: 22px; border-radius: 50%;
     background: rgba(0,0,0,0.55);
     border: 2px solid rgba(255,255,255,0.6);
@@ -105,12 +91,12 @@
     <a class="btn info-btn" target="_blank"
        title="Strømvarselet er hentet fra FjordOs"
        href="https://fjordos.usn.no/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></a>
-    <button class="area-btn" id="area-btn">
+    <button class="btn area-btn" id="area-btn">
       <span id="area-label">Drammensfjorden</span>
       <span>&#9662;</span>
     </button>
+    <div class="dropdown" id="dropdown"></div>
   </div>
-  <div class="dropdown" id="dropdown"></div>
 
   <div class="overlay">
     <button class="btn" id="btn-play"></button>
