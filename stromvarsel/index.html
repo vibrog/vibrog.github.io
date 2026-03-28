@@ -10,18 +10,21 @@
   .wrap { position: relative; width: 100vw; height: 100vh; }
   .slide-img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-  .area-btn {
+  .top-left {
     position: absolute;
-    top: 16px; right: 16px;
+    top: 16px; left: 16px;
+    display: flex; align-items: center; gap: 8px;
+    z-index: 10;
+  }
+  .area-btn {
     background: rgba(0,0,0,0.12);
     border: 1px solid rgba(0,0,0,0.25);
     border-radius: 8px;
     color: #111;
     cursor: pointer;
     font-size: 14px;
-    padding: 8px 14px;
+    padding: 6px 14px;
     backdrop-filter: blur(6px);
-    z-index: 10;
     display: flex; align-items: center; gap: 6px;
     font-family: sans-serif;
     text-decoration: none;
@@ -30,7 +33,7 @@
 
   .dropdown {
     position: absolute;
-    top: 54px; right: 16px;
+    top: 54px; left: 16px;
     background: rgba(240,240,240,0.95);
     border: 1px solid rgba(0,0,0,0.15);
     border-radius: 8px;
@@ -61,6 +64,7 @@
     text-decoration: none;
     font-family: sans-serif;
     flex: 0 0 auto;
+    line-height: 1;
   }
   .info-btn:hover { background: rgba(0,0,0,0.22); }
 
@@ -106,18 +110,20 @@
 <div class="wrap">
   <img class="slide-img" id="slide-img" src="" alt="Strømkart" />
 
-  <button class="area-btn" id="area-btn">
-    <span id="area-label">Drammensfjorden</span>
-    <span>&#9662;</span>
-  </button>
+  <div class="top-left">
+    <a class="info-btn" target="_blank"
+       title="Strømvarselet er hentet fra FjordOs"
+       href="https://fjordos.usn.no/">&#9432;</a>
+    <button class="area-btn" id="area-btn">
+      <span id="area-label">Drammensfjorden</span>
+      <span>&#9662;</span>
+    </button>
+  </div>
   <div class="dropdown" id="dropdown"></div>
 
   <div class="overlay">
     <button class="btn" id="btn-play">&#x23F5;</button>
     <input type="range" id="time-slider" min="0" max="27" step="1" value="0" />
-    <a class="info-btn" target="_blank"
-       title="Strømvarselet er hentet fra FjordOs"
-       href="https://fjordos.usn.no/">&#9432;</a>
   </div>
 </div>
 
