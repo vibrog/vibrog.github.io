@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strømvarsel Oslofjorden</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #fff; width: 100vw; height: 100vh; overflow: hidden; }
+  .wrap { position: relative; width: 100vw; height: 100vh; }
+  .slide-img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+  .area-btn {
+    position: absolute;
+    top: 16px; right: 16px;
+    background: rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 8px;
+    color: #111;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 14px;
+    backdrop-filter: blur(6px);
+    z-index: 10;
+    display: flex; align-items: center; gap: 6px;
+    font-family: sans-serif;
+    text-decoration: none;
+  }
+  .area-btn:hover { background: rgba(0,0,0,0.22); }
+
+  .dropdown {
+    position: absolute;
+    top: 54px; right: 16px;
+    background: rgba(240,240,240,0.95);
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 20;
+    display: none;
+    min-width: 180px;
+    backdrop-filter: blur(8px);
+  }
+  .dropdown.open { display: block; }
+  .dropdown-item {
+    padding: 10px 16px;
+    color: #111;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: sans-serif;
+  }
+  .dropdown-item:hover { background: rgba(0,0,0,0.08); }
+  .dropdown-item.active { background: rgba(0,0,0,0.13); font-weight: 500; }
+
+  .info-btn {
+    background: rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 8px;
+    color: #111;
+    font-size: 18px;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-family: sans-serif;
+    flex: 0 0 auto;
+  }
+  .info-btn:hover { background: rgba(0,0,0,0.22); }
+
+  .overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 20px 24px;
+    background: linear-gradient(transparent, rgba(255,255,255,0.7));
+    display: flex; align-items: center; gap: 12px;
+  }
+  .btn {
+    background: rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 6px; color: #111; cursor: pointer;
+    font-size: 16px; padding: 8px 16px; white-space: nowrap;
+    font-family: sans-serif; flex: 0 0 auto;
+  }
+  .btn:hover { background: rgba(0,0,0,0.22); }
+  .btn:active { transform: scale(0.97); }
+  #time-slider {
+    flex: 1;
+    -webkit-appearance: none; appearance: none;
+    height: 5px; border-radius: 3px;
+    background: rgba(0,0,0,0.15);
+    cursor: pointer; outline: none;
+  }
+  #time-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    border: 2px solid rgba(255,255,255,0.6);
+    cursor: grab;
+  }
+  #time-slider::-moz-range-thumb {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(0,0,0,0.55);
+    border: 2px solid rgba(255,255,255,0.6);
+    cursor: grab;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="slide-img" id="slide-img" src="" alt="Strømkart" />
+
+  <button class="area-btn" id="area-btn">
+    <span id="area-label">Drammensfjorden</span>
+    <span>&#9662;</span>
+  </button>
+  <div class="dropdown" id="dropdown"></div>
+
+  <div class="overlay">
+    <button class="btn" id="btn-play">&#x23F5;</button>
+    <input type="range" id="time-slider" min="0" max="27" step="1" value="0" />
+    <a class="info-btn" target="_blank"
+       title="Strømvarselet er hentet fra FjordOs"
+       href="https://fjordos.usn.no/">&#9432;</a>
+  </div>
+</div>
+
+<script>
+  const BASE = 'https://projects.met.no/~nilsmk/';
+
+  const areas = [
+    { label: 'Hele fjorden', url: h => `${BASE}oslofjord/grafikk/ferder_hele__${h}_current` },
+    { label: 'Indre fjord', url: h => `${BASE}oslofjord/grafikk/ferder1__${h}_current` },
+    { label: 'Drøbak', url: h => `${BASE}oslofjord/grafikk/ferder2__${h}_current` },
+    { label: 'Midtre fjord', url: h => `${BASE}oslofjord/grafikk/ferder3__${h}_current` },
+    { label: 'Ytre fjord', url: h => `${BASE}oslofjord/grafikk/ferder4__${h}_current` },
+    { label: 'Drammensfjorden', url: h => `${BASE}oslofjord/grafikk/drammen1__${h}_current` },
+    { label: 'Hankø', url: h => `${BASE}hanko/hanko1_${h}_current` },
+    { label: 'Hvaler', url: h => `${BASE}hvaler/hvaler1_${h}_current` },
+  ];
+
+  const hours = [];
+  for (let h = 6; h <= 60; h += 2) hours.push(h);
+
+  let currentArea = 5;
+  let current = 0, playing = false, timer = null, speed = 750;
+
+  const img      = document.getElementById('slide-img');
+  const btnPlay  = document.getElementById('btn-play');
+  const slider   = document.getElementById('time-slider');
+  const areaBtn  = document.getElementById('area-btn');
+  const areaLabel = document.getElementById('area-label');
+  const dropdown = document.getElementById('dropdown');
+
+  function closestHourIndex() {
+    const now = new Date();
+    const h = now.getHours() + now.getMinutes() / 60;
+    let best = 0, bestDiff = Infinity;
+    hours.forEach((hh, i) => {
+      const diff = Math.abs(hh - h);
+      if (diff < bestDiff) { bestDiff = diff; best = i; }
+    });
+    return best;
+  }
+
+  function buildDropdown() {
+    dropdown.innerHTML = '';
+    areas.forEach((area, i) => {
+      const item = document.createElement('div');
+      item.className = 'dropdown-item' + (i === currentArea ? ' active' : '');
+      item.textContent = area.label;
+      item.addEventListener('click', () => {
+        currentArea = i;
+        areaLabel.textContent = area.label;
+        dropdown.classList.remove('open');
+        goto(current);
+        buildDropdown();
+      });
+      dropdown.appendChild(item);
+    });
+  }
+
+  areaBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+  document.addEventListener('click', () => dropdown.classList.remove('open'));
+
+  function goto(idx) {
+    current = Math.max(0, Math.min(idx, hours.length - 1));
+    img.src = areas[currentArea].url(hours[current]);
+    slider.value = current;
+  }
+
+  function startPlay() {
+    playing = true;
+    btnPlay.innerHTML = '&#x23F8;';
+    timer = setInterval(() => goto(current >= hours.length - 1 ? 0 : current + 1), speed);
+  }
+
+  function stopPlay() {
+    playing = false;
+    btnPlay.innerHTML = '&#x23F5;';
+    clearInterval(timer);
+  }
+
+  btnPlay.addEventListener('click', () => playing ? stopPlay() : startPlay());
+
+  slider.addEventListener('input', () => {
+    stopPlay();
+    goto(parseInt(slider.value));
+  });
+
+  buildDropdown();
+  goto(closestHourIndex());
+</script>
+</body>
+</html>
