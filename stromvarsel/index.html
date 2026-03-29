@@ -19,15 +19,15 @@
   .area-wrap, .wrap { position: relative; }
   .dropdown {
     position: absolute;
-    top: 0; left: 0 !important;
+    top: 0; left: 0;
     background: rgba(240,240,240,0.95);
-    border: 1px solid rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.25);
     border-radius: 6px;
     overflow: hidden;
     z-index: 20;
     display: none;
     min-width: 180px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
   }
   .dropdown.open { display: block; }
   .dropdown-item {
@@ -193,10 +193,6 @@
     btnPlay.innerHTML = iconPlay;
     const startIdx = closestHourIndex();
     goto(startIdx);
-    requestAnimationFrame(() => {
-      const areaRect = document.getElementById('area-btn').getBoundingClientRect();
-      dropdown.style.left = areaRect.left + 'px';
-    });
   }
 
   function goto(idx) {
