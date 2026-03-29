@@ -128,6 +128,7 @@
 
   let currentArea = 5;
   let current = 0, playing = false, timer = null, speed = 750;
+  let hourOffset = 0;
 
   const img = document.getElementById('slide-img');
   const btnPlay = document.getElementById('btn-play');
@@ -172,9 +173,31 @@
   });
   document.addEventListener('click', () => dropdown.classList.remove('open'));
 
+  async function detectOffset() {
+    try {
+      const probe = areas[currentArea].url(hours[0]);
+      const res = await fetch(probe, { method: 'HEAD' });
+      const lastMod = res.headers.get('Last-Modified');
+      if (lastMod) {
+        const imgDate = new Date(lastMod).toDateString();
+        const today   = new Date().toDateString();
+        if (imgDate !== today) hourOffset = 24;
+      }
+    } catch (e) {}
+    buildDropdown();
+    btnPlay.innerHTML = iconPlay;
+    const startIdx = closestHourIndex();
+    goto(startIdx);
+    requestAnimationFrame(() => {
+      const areaRect = document.getElementById('area-btn').getBoundingClientRect();
+      dropdown.style.left = areaRect.left + 'px';
+    });
+  }
+
   function goto(idx) {
+    const offsetIdx = Math.round(hourOffset / 2);
     current = Math.max(0, Math.min(idx, hours.length - 1));
-    img.src = areas[currentArea].url(hours[current]);
+    img.src = areas[currentArea].url(hours[current + offsetIdx]);
     slider.value = current;
   }
 
@@ -197,9 +220,7 @@
     goto(parseInt(slider.value));
   });
 
-  buildDropdown();
-  btnPlay.innerHTML = iconPlay;
-  goto(closestHourIndex());
+  detectOffset();
 </script>
 </body>
 </html>
