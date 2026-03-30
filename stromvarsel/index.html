@@ -129,7 +129,6 @@
 
   let currentArea = 5;
   let current = 0, playing = false, timer = null, speed = 750;
-  let hourOffset = 0;
 
   const img = document.getElementById('slide-img');
   const btnPlay = document.getElementById('btn-play');
@@ -141,14 +140,9 @@
   const iconStop = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 
   function closestHourIndex() {
-    const now = new Date();
-    const h = now.getHours() + now.getMinutes() / 60;
-    let best = 0, bestDiff = Infinity;
-    hours.forEach((hh, i) => {
-      const diff = Math.abs(hh - h);
-      if (diff < bestDiff) { bestDiff = diff; best = i; }
-    });
-    return best;
+    const h = new Date().getUTCHours() + new Date().getUTCMinutes() / 60;
+    return hours.reduce((best, hh, i) =>
+      Math.abs(hh - h) < Math.abs(hours[best] - h) ? i : best, 0);
   }
 
   function buildDropdown() {
@@ -178,27 +172,16 @@
     areaBtn.classList.remove('open');
   });
 
-  async function detectOffset() {
-    try {
-      const probe = areas[currentArea].url(hours[0]);
-      const res = await fetch(probe, { method: 'HEAD' });
-      const lastMod = res.headers.get('Last-Modified');
-      if (lastMod) {
-        const imgDate = new Date(lastMod).toDateString();
-        const today   = new Date().toDateString();
-        if (imgDate !== today) hourOffset = 24;
-      }
-    } catch (e) {}
+  function detectOffset() {
+    offset = new Date().getUTCHours() < 12 ? 24/2 : 0;
     buildDropdown();
     btnPlay.innerHTML = iconPlay;
-    const startIdx = closestHourIndex();
-    goto(startIdx);
+    goto(closestHourIndex() + offset);
   }
 
   function goto(idx) {
-    const offsetIdx = Math.round(hourOffset / 2);
     current = Math.max(0, Math.min(idx, hours.length - 1));
-    img.src = areas[currentArea].url(hours[current + offsetIdx]);
+    img.src = areas[currentArea].url(hours[current]);
     slider.value = current;
   }
 
