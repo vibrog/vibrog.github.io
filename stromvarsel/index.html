@@ -173,7 +173,8 @@
   });
 
   function detectOffset() {
-    offset = new Date().getUTCHours() < 12 ? 24/2 : 0;
+    const updateTime = 9.3;
+    offset = new Date().getUTCHours() < updateTime ? 24/2 : 0;
     buildDropdown();
     btnPlay.innerHTML = iconPlay;
     goto(closestHourIndex() + offset);
