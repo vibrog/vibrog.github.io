@@ -185,22 +185,19 @@
     slider.value = current;
   }
 
-  function startPlay() {
-    playing = true;
-    btnPlay.innerHTML = iconStop;
-    timer = setInterval(() => goto(current >= hours.length - 1 ? 0 : current + 1), speed);
+  function togglePlay() {
+    playing = !playing;
+    btnPlay.innerHTML = playing ? iconStop : iconPlay;
+    if (playing) {
+      timer = setInterval(() => goto(current >= hours.length - 1 ? 0 : current + 1), speed);
+    } else {
+      clearInterval(timer);
+    }
   }
-
-  function stopPlay() {
-    playing = false;
-    btnPlay.innerHTML = iconPlay;
-    clearInterval(timer);
-  }
-
-  btnPlay.addEventListener('click', () => playing ? stopPlay() : startPlay());
+  btnPlay.addEventListener('click', togglePlay);
 
   slider.addEventListener('input', () => {
-    stopPlay();
+    if (playing) togglePlay();
     goto(parseInt(slider.value));
   });
 
