@@ -63,7 +63,13 @@
     gap: 6px;
   }
   .area-btn.open { visibility: hidden; }
-  .area-btn, .info-btn { text-decoration: none; }
+  .svelvik-btn {
+    position: absolute;
+    top: 16px; right: 16px;
+    gap: 6px;
+    display: none;
+  }
+  .area-btn, .info-btn, .svelvik-btn { text-decoration: none; }
 
   #time-slider {
     flex: 1;
@@ -103,6 +109,10 @@
       <div class="dropdown" id="dropdown"></div>
     </div>
   </div>
+
+  <a class="btn svelvik-btn" id="svelvik-btn" target="_blank"
+     title="Vannføring i Svelvikstrømmen er hentet fra Kystverket"
+     href="https://mobvaer.kystverket.no/svelvikstrommen/"></a>
 
   <div class="overlay">
     <button class="btn" id="btn-play"></button>
@@ -184,7 +194,80 @@
     current = Math.max(0, Math.min(idx, hours.length - 1));
     img.src = areas[currentArea].url(hours[current]);
     slider.value = current;
+    updateSvelvikVisibility();
   }
+
+  const svelvikBtn = document.getElementById('svelvik-btn');
+
+  function updateSvelvikVisibility() {
+    if (areas[currentArea].label === 'Drammensfjorden') {
+      svelvikBtn.style.display = 'flex';
+      fetchSvelvik();
+    } else {
+      svelvikBtn.style.display = 'none';
+    }
+  }
+
+  function meanCurrent(magnitudes, directions) {
+    if (magnitudes.length !== directions.length || magnitudes.length === 0)
+      return [undefined, undefined];
+    let meanX = 0, meanY = 0;
+    for (let i = 0; i < magnitudes.length; i++) {
+      if (isNaN(magnitudes[i]) || magnitudes[i] === null ||
+          isNaN(directions[i]) || directions[i] === null)
+        return [undefined, undefined];
+      const x = magnitudes[i] * Math.cos(directions[i] * Math.PI / 180);
+      const y = magnitudes[i] * Math.sin(directions[i] * Math.PI / 180);
+      meanX += (x - meanX) / (i + 1);
+      meanY += (y - meanY) / (i + 1);
+    }
+    const mag = Math.sqrt(meanX * meanX + meanY * meanY);
+    let dir = (Math.atan2(meanY, meanX) * 180 / Math.PI % 360 + 360) % 360;
+    if (isNaN(mag) || mag < 0.001) dir = undefined;
+    return [mag, dir];
+  }
+
+  async function fetchSvelvik() {
+    const stationId  = '20665059';
+    try {
+      const SVELVIK_URL  = `https://mobvaer.kystverket.no/v4/stations/${stationId}/instantaneous/values`;
+      const MAG_NOS = [29, 31, 33, 35, 37, 39, 41, 43];
+      const DIR_NOS = [30, 32, 34, 36, 38, 40, 42, 44];
+      const res  = await fetch(SVELVIK_URL);
+      const data = await res.json();
+      const mags = MAG_NOS.map(n => data[n]?.Value);
+      const dirs = DIR_NOS.map(n => data[n]?.Value);
+      const [mag, dir] = meanCurrent(mags, dirs);
+      if (mag === undefined) return;
+      const knop = (mag / 1000 * 1.94384).toFixed(1);
+      /*
+      const base = 'https://api.coastal-weather.kystverket.cloud/v1/stations';
+      const [speedRes, dirRes] = await Promise.all([
+        fetch(`${base}/${stationId}/current-speed`),
+        fetch(`${base}/${stationId}/current-direction`)
+      ]);
+      const [speedData, dirData] = await Promise.all([
+        speedRes.json(),
+        dirRes.json()
+      ]);
+      const knop = speedData.value.toFixed(1);
+      const dir = dirData.value;
+      */
+      svelvikBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 24 24" width="22" height="22"
+             fill="currentColor" style="transform:rotate(${dir}deg);">
+          <path d="M12 3.97C7.59 3.97 3.97 7.59 3.97 12C3.97 16.41 7.59 20.03 12 20.03C16.41 20.03 20.03 16.41 20.03 12C20.03 7.59 16.41 3.97 12 3.97M12 2C17.54 2 22 6.46 22 12C22 17.54 17.54 22 12 22C6.46 22 2 17.54 2 12C2 6.46 6.46 2 12 2M13 10.46H16L12 6.5L8 10.46H11V17.5H13" />
+        </svg>
+        <span>${knop} kn</span>`;
+    } catch(e) {
+      svelvikBtn.style.display = 'none';
+    }
+  }
+
+  setInterval(() => {
+    if (areas[currentArea].label === 'Drammensfjorden') fetchSvelvik();
+  }, 60000);
 
   function togglePlay() {
     playing = !playing;
