@@ -121,17 +121,18 @@
 </div>
 
 <script>
-  const BASE = 'https://projects.met.no/~nilsmk/';
+  const BASE = 'https://projects.met.no/~nilsmk/oslofjord/grafikk';
 
   const areas = [
-    { label: 'Hele fjorden', url: h => `${BASE}oslofjord/grafikk/ferder_hele__${h}_current` },
-    { label: 'Indre fjord', url: h => `${BASE}oslofjord/grafikk/ferder1__${h}_current` },
-    { label: 'Drøbak', url: h => `${BASE}oslofjord/grafikk/ferder2__${h}_current` },
-    { label: 'Midtre fjord', url: h => `${BASE}oslofjord/grafikk/ferder3__${h}_current` },
-    { label: 'Ytre fjord', url: h => `${BASE}oslofjord/grafikk/ferder4__${h}_current` },
-    { label: 'Drammensfjorden', url: h => `${BASE}oslofjord/grafikk/drammen1__${h}_current` },
-    { label: 'Hankø', url: h => `${BASE}hanko/hanko1_${h}_current` },
-    { label: 'Hvaler', url: h => `${BASE}hvaler/hvaler1_${h}_current` },
+    { label: 'Hele fjorden', url: h => `${BASE}/ferder_hele__${h}_current` },
+    { label: 'Indre fjord', url: h => `${BASE}/ferder1__${h}_current` },
+    { label: 'Drøbak', url: h => `${BASE}/ferder2__${h}_current` },
+    { label: 'Midtre fjord', url: h => `${BASE}/ferder3__${h}_current` },
+    { label: 'Ytre fjord', url: h => `${BASE}/ferder4__${h}_current` },
+    { label: 'Drammensfjorden', url: h => `${BASE}/drammen1__${h}_current` },
+    { label: 'Hankø', url: h => `${BASE}/hanko1_${h}_current` },
+    { label: 'Hvaler', url: h => `${BASE}/hvaler1_${h}_current` },
+    { label: 'Arendal', url: h => `${BASE}/arendal1_${h}_current` },
   ];
 
   const hours = [];
