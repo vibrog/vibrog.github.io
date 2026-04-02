@@ -1,180 +1,117 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="no">
+<!DOCTYPE html>
+<html lang="no">
 <head>
 <title>Blåstier i Oslomarka (laget for DNT Oslo)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-
-<!-- Bring in the OpenLayers javascript library -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.3.1/ol.css" type="text/css"/>
 <script src="https://cdn.jsdelivr.net/npm/ol@10.3.1/dist/ol.js" type="text/javascript"></script>
-
-<!-- Bring in the map layers -->
-<script src="http://tile.tusvik.no/js/tile.tusvik.js"></script>
-
-<!-- Bring in Proj4 to set UTM zone 32 (EPSG:32632) appropriately -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.19.10/proj4.min.js"></script>
-
-<script type="text/javascript">
-// Start position for the map
-var lat=59.99
-var lon=10.72
-var zoom=11
-OpenLayers.Lang.setCode("nb");
-
-Proj4js.defs["EPSG:32632"] = "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs";
-
-// Use cookies to remember last map view
-var cookiename = "mapView";  // Name for this cookie
-var expiredays = 7;          // Number of days before cookie expiry
-// Look for the cookie
-if (document.cookie.length>0) {
-  cookieStart = document.cookie.indexOf(cookiename + "=");
-  if (cookieStart!=-1) {
-    cookieStart += cookiename.length+1;
-    cookieEnd=document.cookie.indexOf(";",cookieStart);
-    if (cookieEnd==-1) {
-      cookieEnd=document.cookie.length;
-    }
-    cookietext = document.cookie.substring(cookieStart,cookieEnd);
-    // Split the cookie text and create the variables
-    bits = cookietext.split("|");
-    lat = parseFloat(bits[0]);
-    lon = parseFloat(bits[1]);
-    zoom = parseInt(bits[2]);
-    layers = bits[3];
-  }
-}
-
-var map; //complex object of type OpenLayers.Map
-//Initialise the 'map' object
-function init() {
-  map = new OpenLayers.Map({
-    div: "map",
-    theme: null,
-    projection: "EPSG:900913",
-    displayProjection: new OpenLayers.Projection("EPSG:4326"),
-    numZoomLevels: 20,
-    controls: [
-      new OpenLayers.Control.ArgParser(),
-      new OpenLayers.Control.Navigation(),
-      new OpenLayers.Control.Zoom(),
-      new OpenLayers.Control.KeyboardDefaults(),
-      new OpenLayers.Control.Attribution(),
-      new OpenLayers.Control.MousePosition({
-        displayProjection: new OpenLayers.Projection("EPSG:32632"),
-        separator: " ",
-        numDigits: 4,
-        formatOutput: chopUtm
-      }),
-      new OpenLayers.Control.Permalink({anchor: true})
-    ],
-    layers: [
-      new OpenLayers.Layer.Tusvik("DNT trails")
-    ]
-  });
-
-  // Add vector layer
-  var boundsStyle = new OpenLayers.StyleMap(OpenLayers.Util.applyDefaults(
-    { strokeColor: "#0c5", strokeWidth: 3, strokeOpacity: .85 },
-    OpenLayers.Feature.Vector.style["default"]));
-  bounds = new OpenLayers.Layer.Vector("Områdekart", {
-    projection: map.displayProjection,
-    strategies: [new OpenLayers.Strategy.Fixed()],
-    protocol: new OpenLayers.Protocol.HTTP({
-      url: "dntOsloOmrader.kml",
-      format: new OpenLayers.Format.KML
-    }),
-    styleMap: boundsStyle
-  });
-  map.addLayer(bounds);
-
-  var lonLat = new OpenLayers.LonLat(lon, lat).transform(
-    new OpenLayers.Projection("EPSG:4326"),
-    map.getProjectionObject());
-  if( ! map.getCenter() ){
-    map.setCenter(lonLat, zoom);
-  }
-
-}
-
-function chopUtm (lonLat) {
-  var newHtml =
-    this.prefix +
-    lonLat.lon.toFixed().substring(1,1+this.numDigits) +
-    this.separator +
-    lonLat.lat.toFixed().substring(2,2+this.numDigits) +
-    this.suffix;
-  return newHtml;
-}
-
-// Returns a string representation of layers in map
-function getActiveLayers() {
-  var layers = '';
-  for (var i=0; i< map.layers.length; i++) {
-    var layer = map.layers[i];
-    if (layer.isBaseLayer) {
-      layers += (layer == map.baseLayer) ? "B" : "0";
-    } else {
-      layers += (layer.getVisibility()) ? "T" : "F";
-    }
-  }
-  return layers;
-}
-
-// Reads a string like the one getActiveLayers makes and
-// sets the active layers correspondingly
-function setActiveLayers(layers) {
-  for(var i=0; i < layers.length; i++) {
-    var layer = map.layers[i];
-    var c = layers.charAt(i);
-    if (c == "B") {
-        map.setBaseLayer(layer);
-    } else if ( (c == "T") || (c == "F") ) {
-        layer.setVisibility(c == "T");
-    }
-  }
-}
-
-// Set the cookie before exiting
-function setCookie() {
-  var lonlat = map.getCenter().clone()
-    .transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
-  var cookietext = cookiename+"="+lonlat.lat+"|"+lonlat.lon+"|"+
-    map.getZoom()+"|"+getActiveLayers();
-  if (expiredays) {
-    var exdate=new Date();
-    exdate.setDate(exdate.getDate()+expiredays);
-    cookietext += ";expires="+exdate.toGMTString();
-  }
-  document.cookie=cookietext;
-}
-
-window.onload = init;
-window.onunload = setCookie;
-</script>
-
+<style type="text/css">html, body, #map { margin:0; padding:0; width:100%; height:100%; }</style>
+<script src="https://cdn.jsdelivr.net/npm/mgrs@1.0.0/dist/mgrs.js"></script>
 <style type="text/css">
 html, body, #map { margin:0; padding:0; width:100%; height:100%; }
-.olControlAttribution {
-  font-size:8pt;
-  left:5px; bottom:5px;
-}
-.olControlMousePosition {
-  background-color: white;
-  font-size: 11pt !important;
-  padding: 1px 3px;
-  border-radius: 5px 0 0 0;
+#coords {
   position: absolute;
-  bottom: 0 !important;
-  right: 0 !important;
+  top: 8px;
+  right: 8px;
+  background: rgba(255,255,255);
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 3px;
+  padding: 4px 8px;
+  font: 12px monospace;
+  color: #666;
+  z-index: 1000;
 }
 </style>
-
 </head>
 <body>
-  <!-- Define a DIV into which the map will appear. -->
-  <div id="map"></div>
+<div id="map"></div>
+<div id="coords">–</div>
+<script>
+function guidepostStyle(feature) {
+  var op = feature.get('operator') || '';
+  var foot = feature.get('foot');
+  var hiking = feature.get('hiking');
+  var ski = feature.get('ski');
+  var bicycle = feature.get('bicycle');
+
+  var fill = 'rgba(192,192,192,0.8)';
+  var stroke = 'rgb(128,128,128)';
+
+  if (foot && /kommune/i.test(op)) {
+    fill = 'rgba(0,88,98,0.8)';
+    stroke = 'rgb(185,245,183)';
+  } else if (hiking && /DNT/i.test(op)) {
+    fill = 'rgba(14,60,204,0.8)';
+    stroke = 'rgb(127,195,216)';
+  } else if (ski && /Skiforeningen/i.test(op)) {
+    fill = 'rgba(221,88,64,0.8)';
+  } else if (bicycle) {
+    fill = 'rgba(155,27,48,0.8)';
+    stroke = 'rgb(230,160,170)';
+  }
+
+  if (ski) stroke = 'rgb(249,0,37)';
+
+  return new ol.style.Style({
+    image: new ol.style.Circle({
+      radius: 6,
+      stroke: new ol.style.Stroke({ color: stroke, width: 1 }),
+      fill: new ol.style.Fill({ color: fill })
+    })
+  });
+}
+
+var map = new ol.Map({
+  target: 'map',
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        attributions: '<a href="https://kartverket.no/">Kartverket</a>, ',
+        url: 'https://cache.kartverket.no/v1/wmts/1.0.0/topograatone/default/webmercator/{z}/{y}/{x}.png'
+      })
+    }),
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        attributions: '<a href="https://osm.org/">OpenStreetMap contributors</a>',
+        url: 'https://overpass-api.de/api/interpreter?data=node[information=guidepost](59.67,10.26,60.28,11.16);out;',
+        format: new ol.format.OSMXML()
+      }),
+      style: guidepostStyle
+    })
+  ],
+  view: new ol.View({
+    center: ol.proj.fromLonLat([10.72,59.99]),
+    zoom: 11
+  })
+});
+
+// Display MGRS coordinates at mouse position
+var coords = document.getElementById('coords');
+map.on('pointermove', function(evt) {
+  var lonLat = ol.proj.toLonLat(evt.coordinate);
+  var mgrsStr = window.mgrs.forward([lonLat[0], lonLat[1]], 4);
+  var zone = mgrsStr.substring(0,3);
+  var square = mgrsStr.substring(3,5);
+  var easting = mgrsStr.substring(5,9);
+  var northing = mgrsStr.substring(9,13);
+  coords.textContent = zone + ' ' + square + ' ' + easting + ' ' + northing;
+});
+
+// Restore saved view
+var savedCenter = localStorage.getItem('mapCenter');
+var savedZoom = localStorage.getItem('mapZoom');
+if (savedCenter && savedZoom) {
+  map.getView().setCenter(JSON.parse(savedCenter));
+  map.getView().setZoom(Number(savedZoom));
+}
+// Save view on change
+map.getView().on('change', function() {
+  localStorage.setItem('mapCenter', JSON.stringify(map.getView().getCenter()));
+  localStorage.setItem('mapZoom', map.getView().getZoom());
+});
+</script>
 </body>
 </html>
