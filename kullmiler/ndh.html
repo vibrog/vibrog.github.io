@@ -44,10 +44,12 @@ function pointStyleFunction(feature, resolution) {
     }
   }
 };
+
 proj4.defs("EPSG:32633","+proj=utm +zone=33 +datum=WGS84 +units=m +no_defs");
 var proj32633 = ol.proj.get('EPSG:32633');
 proj32633.setExtent([234300, 6634760, 273000, 6690870]);
 ol.proj.addProjection(proj32633);
+
 var map = new ol.Map({
   target: 'map',
   layers: [
@@ -60,17 +62,11 @@ var map = new ol.Map({
     new ol.layer.Tile({
       opacity: 0.75,
       source: new ol.source.TileWMS({
-        attributions: '<a href="https://hoydedata.no/LaserInnsyn/">hoydedata.no</a>',
-        url: 'https://hoydedata.no/arcgis/rest/services/las_dtm_skyggerelieff/ImageServer/exportImage',
+        attributions: '<a href="https://hoydedata.no/">hoydedata.no</a>',
+        url: 'https://wms.geonorge.no/skwms1/wms.hoyde-dtm',
         params: {
-          'f': 'image',
-          'format': 'jpgpng',
-          'renderingRule': '{"rasterFunction":"skyggerelieff"}',
-          'mosaicRule': '{'
-             + '"mosaicMethod":"esriMosaicNorthwest",'
-             + '"where":"LAS_PROJECT_ID IN (521,472,346,124,9,125,416,123,263)",'
-             + '"mosaicOperation":"MT_FIRST"}',
-          'bboxSR': '25833',
+          'LAYERS': 'DTM:skyggerelieff',
+          'FORMAT': 'image/png',
         },
         projection: proj32633,
         extents: [234166.433002, 6629388.904332, 279329.199482, 6691457.645583],
