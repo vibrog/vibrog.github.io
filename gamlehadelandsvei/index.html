@@ -1,6 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="no">
 <head>
 <title>Historiske ferdselsveier fra Oslo til Hadeland</title>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, user-scalable=no"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -31,6 +33,7 @@ var map = new ol.Map({
     }),
     new ol.layer.Vector({
       source: new ol.source.Vector({
+        attributions: '<a href="https://osm.org/">OpenStreetMap-bidragsytere</a>,',
         url: 'https://overpass-api.de/api/interpreter?data=relation(id:6701497,3897913,1603624,1782816,1786978,1786979,5316866,6953266,3955929);>;out+skel;',
         format: new ol.format.OSMXML()
       }),
@@ -40,7 +43,7 @@ var map = new ol.Map({
     }),
     new ol.layer.Vector({
       source: new ol.source.Vector({
-        attributions: '<a href="https://www.maridalensvenner.no/arbok-maridalens-venner-2017.5947624-15237.html">Ståle Pinslie</a>, Vidar B. Gundersen, <a href="https://osm.org/">OpenStreetMap-bidragsytere</a>,',
+        attributions: '<a href="https://www.maridalensvenner.no/arbok-maridalens-venner-2017.5947624-15237.html">Ståle Pinslie</a>',
         url: 'pinslie-turforslag.gpx',
         format: new ol.format.GPX()
       }),
