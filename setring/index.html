@@ -3,9 +3,9 @@
 <title>Seterplasser</title>
 <meta name="viewport" content="width=device-width, user-scalable=no"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css"/>
-<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
-<style type="text/css">body, #map { margin:0; width:100%; height:100%; }</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.3.1/ol.css" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/ol@10.3.1/dist/ol.js"></script>
+<style type="text/css">html, body, #map { margin:0; width:100%; height:100%; }</style>
 </head>
 <body>
 <div id="map"></div>
@@ -29,8 +29,8 @@ var map = new ol.Map({
   layers: [
     new ol.layer.Tile({
       source: new ol.source.XYZ({
-        attributions: '<a href="http://kartverket.no/">Kartverket</a>',
-        url: 'https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4graatone&zoom={z}&x={x}&y={y}'
+        attributions: '<a href="https://kartverket.no/">Kartverket</a>',
+        url: 'https://cache.kartverket.no/v1/wmts/1.0.0/topograatone/default/webmercator/{z}/{y}/{x}.png'
       })
     }),
     new ol.layer.Tile({

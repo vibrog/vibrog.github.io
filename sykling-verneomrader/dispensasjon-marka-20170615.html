@@ -7,11 +7,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../kart/osm-180.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../kart/osm-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../kart/osm-16.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.3.2/ol.css" type="text/css"/>
-<link rel="stylesheet" href="https://cdn.rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.css" type="text/css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.3.2/ol.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
-<script src="https://cdn.rawgit.com/walkermatt/ol3-layerswitcher/master/src/ol3-layerswitcher.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.3.1/ol.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol-layerswitcher@4.1.2/dist/ol-layerswitcher.css" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/ol@10.3.1/dist/ol.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.19.10/proj4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ol-layerswitcher@4.1.2/dist/ol-layerswitcher.js"></script>
 <style type="text/css">
 body, #map { margin:0; width:100%; height:100%; }
 .layer-switcher {
@@ -41,7 +41,7 @@ var map = new ol.Map({
       type: 'base',
       source: new ol.source.XYZ({
         attributions: '<a href="https://kartverket.no/">Kartverket</a>',
-        url: 'https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4graatone&zoom={z}&x={x}&y={y}'
+        url: 'https://cache.kartverket.no/v1/wmts/1.0.0/topograatone/default/webmercator/{z}/{y}/{x}.png'
       })
     }),
     new ol.layer.Tile({
@@ -50,7 +50,7 @@ var map = new ol.Map({
       visible: false,
       source: new ol.source.XYZ({
         attributions: '<a href="https://kartverket.no/">Kartverket</a>',
-        url: 'https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&zoom={z}&x={x}&y={y}'
+        url: 'https://cache.kartverket.no/v1/wmts/1.0.0/topo/default/webmercator/{z}/{y}/{x}.png'
       })
     }),
     new ol.layer.Tile({
@@ -88,15 +88,15 @@ var map = new ol.Map({
       type: 'base',
       visible: false,
       source: new ol.source.XYZ({
-        attributions: '<a href="https://www.mtbmap.no/">MTBmap.no</a>',
-        url: 'http://{a-d}.tiles.mtbmap.no/osm/mtbmap/{z}/{x}/{y}.png'
+        attributions: '<a href="https://mtbmap.no/">MTBmap.no</a>',
+        url: 'https://mtbmap.no/tiles/osm/mtbmap/{z}/{x}/{y}.png'
       })
     }),
     new ol.layer.Tile({
       title: 'Strava heatmap',
       visible: false,
       source: new ol.source.XYZ({
-        attributions: '<a href="http://labs.strava.com/heatmap/">Strava heatmap</a>',
+        attributions: '<a href="https://www.strava.com/heatmap">Strava heatmap</a>',
         url: 'https://globalheat.strava.com/tiles/cycling/color7/{z}/{x}/{y}.png?v=6'
       })
     }),
