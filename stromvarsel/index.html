@@ -53,23 +53,25 @@
     border-radius: 6px; color: #111; cursor: pointer;
     font-size: 14px; padding: 4px 12px; white-space: nowrap;
     font-family: sans-serif; flex: 0 0 auto;
-    display: flex; align-items: center; justify-content: center;
+    display: flex; align-items: center; gap: 6px;
+    justify-content: center;
   }
   .btn:hover { background: rgba(0,0,0,0.22); }
   .btn:active { transform: scale(0.97); }
+  a { text-decoration: none; }
   .area-btn {
     padding: 6px 12px;
     backdrop-filter: blur(6px);
-    gap: 6px;
   }
   .area-btn.open { visibility: hidden; }
-  .svelvik-btn {
+  .top-right {
     position: absolute;
     top: 16px; right: 16px;
-    gap: 6px;
-    display: none;
+    display: flex; gap: 8px;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 10;
   }
-  .area-btn, .info-btn, .svelvik-btn { text-decoration: none; }
 
   #time-slider {
     flex: 1;
@@ -110,9 +112,14 @@
     </div>
   </div>
 
-  <a class="btn svelvik-btn" id="svelvik-btn" target="_blank"
-     title="Vannføring i Svelvikstrømmen er hentet fra Kystverket"
-     href="https://mobvaer.kystverket.no/svelvikstrommen/"></a>
+  <div class="top-right">
+    <a class="btn" id="svelvik-btn" target="_blank"
+       title="Vannføring i Svelvikstrømmen er hentet fra Kystverket"
+       href="https://mobvaer.kystverket.no/svelvikstrommen/"></a>
+    <a class="btn" id="tide-btn" target="_blank"
+       title="Vannstand og tidevann er hentet fra Kartverket"
+       href="https://kartverket.no/til-sjos/se-havniva/resultat?id=124591&location=Svelvik"></a>
+  </div>
 
   <div class="overlay">
     <button class="btn" id="btn-play"></button>
@@ -199,13 +206,17 @@
   }
 
   const svelvikBtn = document.getElementById('svelvik-btn');
+  const tideBtn = document.getElementById('tide-btn');
 
   function updateSvelvikVisibility() {
     if (areas[currentArea].label === 'Drammensfjorden') {
       svelvikBtn.style.display = 'flex';
       fetchSvelvik();
+      tideBtn.style.display = 'flex';
+      fetchTide();
     } else {
       svelvikBtn.style.display = 'none';
+      tideBtn.style.display = 'none';
     }
   }
 
@@ -269,6 +280,34 @@
   setInterval(() => {
     if (areas[currentArea].label === 'Drammensfjorden') fetchSvelvik();
   }, 60000);
+
+  async function fetchTide() {
+    const tideUrl = 'https://kartverket.no/api/vsl/tideLevels/?latitude=59.61368&longitude=10.40875&language=nb';
+    const pathDown = 'M12 10L8 6H11V2H13V6H16L12 10';
+    const pathUp = 'M12 2L16 6H13V10H11V6H8L12 2';
+    try {
+      const res = await fetch(tideUrl);
+      const data = await res.json();
+      const r = data.result;
+      const level = Math.round(r.currentLevel.measurement.value);
+      const unit = r.currentLevel.measurement.unit;
+      const nextHigh = new Date(r.nextHighTide.dateTime);
+      const nextLow = new Date(r.nextLowTide.dateTime);
+      const rising = nextHigh < nextLow;
+      const path = rising ? pathUp : pathDown;
+      tideBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 24 24" width="22" height="22"
+             fill="currentColor">
+          <path d="${path}"/>
+          <path d="M20 14H22V16H20C18.62 16 17.26 15.65 16 15C13.5 16.3 10.5 16.3 8 15C6.74 15.65 5.37 16 4 16H2V14H4C5.39 14 6.78 13.53 8 12.67C10.44 14.38 13.56 14.38 16 12.67C17.22 13.53 18.61 14 20 14M20 20H22V22H20C18.62 22 17.26 21.65 16 21C13.5 22.3 10.5 22.3 8 21C6.74 21.65 5.37 22 4 22H2V20H4C5.39 20 6.78 19.53 8 18.67C10.44 20.38 13.56 20.38 16 18.67C17.22 19.53 18.61 20 20 20"/>
+        </svg>
+        <span>${level} ${unit}</span>`;
+      tideBtn.style.display = 'flex';
+    } catch(e) {
+      tideBtn.style.display = 'none';
+    }
+  }
 
   function togglePlay() {
     playing = !playing;
