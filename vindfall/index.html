@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<title>Stirydding</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.3.1/ol.css" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/ol@10.3.1/dist/ol.js" type="text/javascript"></script>
+<style type="text/css">html, body, #map { margin:0; padding:0; width:100%; height:100%; }</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+function pointStyle(feature) {
+  var fill = 'rgba(204,51,0,0.8)';
+  var stroke = 'rgb(255,153,102)';
+  return new ol.style.Style({
+    image: new ol.style.Circle({
+      radius: 6,
+      stroke: new ol.style.Stroke({ color: stroke, width: 1 }),
+      fill: new ol.style.Fill({ color: fill })
+    })
+  });
+}
+
+var map = new ol.Map({
+  target: 'map',
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.XYZ({
+        attributions: '<a href="https://kartverket.no/">Kartverket</a>, ',
+        url: 'https://cache.kartverket.no/v1/wmts/1.0.0/topograatone/default/webmercator/{z}/{y}/{x}.png'
+      })
+    }),
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        url: 'kjekstadmarka-vindfall.osm',
+        format: new ol.format.OSMXML()
+      }),
+      style: pointStyle
+    })
+  ],
+  view: new ol.View({
+    center: ol.proj.fromLonLat([10.72,59.99]),
+    zoom: 11
+  })
+});
+
+var savedCenter = localStorage.getItem('mapCenter');
+var savedZoom = localStorage.getItem('mapZoom');
+if (savedCenter && savedZoom) {
+  map.getView().setCenter(JSON.parse(savedCenter));
+  map.getView().setZoom(Number(savedZoom));
+}
+map.getView().on('change', function() {
+  localStorage.setItem('mapCenter', JSON.stringify(map.getView().getCenter()));
+  localStorage.setItem('mapZoom', map.getView().getZoom());
+});
+</script>
+</body>
+</html>
