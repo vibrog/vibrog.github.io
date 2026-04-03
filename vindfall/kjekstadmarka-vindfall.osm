@@ -1,57 +1,53 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <osm version='0.6' upload='false' generator='JOSM'>
-  <node id='-30250' action='modify' lat='59.78133002525' lon='10.35561202884'>
+  <node id='-50' lat='59.781330' lon='10.355612'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30251' action='modify' lat='59.77830867543' lon='10.37978410184'>
+  <node id='-51' lat='59.778308' lon='10.379784'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30252' action='modify' lat='59.80422856639' lon='10.35739179355'>
+  <node id='-52' lat='59.804228' lon='10.357391'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30253' action='modify' lat='59.7821021934' lon='10.34261940837'>
+  <node id='-53' lat='59.78210' lon='10.342619'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30254' action='modify' lat='59.77084931108' lon='10.35205542907'>
+  <node id='-54' lat='59.770849' lon='10.352055'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30256' action='modify' lat='59.77566833252' lon='10.31671441606'>
+  <node id='-56' lat='59.775668' lon='10.316714'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30257' action='modify' lat='59.77517801651' lon='10.31666519801'>
+  <node id='-57' lat='59.775178' lon='10.316665'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30258' action='modify' lat='59.77489074818' lon='10.31663170114'>
+  <node id='-58' lat='59.774890' lon='10.316631'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30259' action='modify' lat='59.77608862416' lon='10.30792122926'>
+  <node id='-59' lat='59.776088' lon='10.307921'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30261' action='modify' lat='59.77492519805' lon='10.29746710718'>
+  <node id='-61' lat='59.774925' lon='10.297467'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30262' action='modify' lat='59.77511422818' lon='10.29832541406'>
+  <node id='-62' lat='59.775114' lon='10.298325'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30263' action='modify' lat='59.78936666667' lon='10.34024'>
+  <node id='-63' lat='59.789366' lon='10.'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30264' action='modify' lat='59.79813127426' lon='10.29297084907'>
+  <node id='-64' lat='59.798131' lon='10.292970'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30265' action='modify' lat='59.79355571329' lon='10.30516933399'>
+  <node id='-68' lat='59.798108' lon='10.300065'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30268' action='modify' lat='59.79810848954' lon='10.30006516669'>
+  <node id='-70' lat='59.795045' lon='10.298899'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30270' action='modify' lat='59.79504535102' lon='10.29889977833'>
+  <node id='-72' lat='59.793515' lon='10.298868'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-30272' action='modify' lat='59.79351593974' lon='10.29886817306'>
-    <tag k='barrier' v='windfall' />
-  </node>
-  <node id='-30274' action='modify' lat='59.79512488041' lon='10.30911718739'>
+  <node id='-74' lat='59.795124' lon='10.309117'>
     <tag k='barrier' v='windfall' />
   </node>
 </osm>
