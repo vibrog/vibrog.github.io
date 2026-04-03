@@ -113,7 +113,7 @@
   </div>
 
   <div class="top-right">
-    <a class="btn" id="svelvik-btn" target="_blank"
+    <a class="btn" id="flow-btn" target="_blank"
        title="Vannføring i Svelvikstrømmen er hentet fra Kystverket"
        href="https://mobvaer.kystverket.no/svelvikstrommen/"></a>
     <a class="btn" id="tide-btn" target="_blank"
@@ -205,17 +205,17 @@
     updateSvelvikVisibility();
   }
 
-  const svelvikBtn = document.getElementById('svelvik-btn');
+  const flowBtn = document.getElementById('flow-btn');
   const tideBtn = document.getElementById('tide-btn');
 
   function updateSvelvikVisibility() {
     if (areas[currentArea].label === 'Drammensfjorden') {
-      svelvikBtn.style.display = 'flex';
+      flowBtn.style.display = 'flex';
       fetchSvelvik();
       tideBtn.style.display = 'flex';
       fetchTide();
     } else {
-      svelvikBtn.style.display = 'none';
+      flowBtn.style.display = 'none';
       tideBtn.style.display = 'none';
     }
   }
@@ -265,7 +265,7 @@
       const knop = speedData.value.toFixed(1);
       const dir = dirData.value;
       */
-      svelvikBtn.innerHTML = `
+      flowBtn.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 24 24" width="22" height="22"
              fill="currentColor" style="transform:rotate(${dir}deg);">
@@ -273,7 +273,7 @@
         </svg>
         <span>${knop} kn</span>`;
     } catch(e) {
-      svelvikBtn.style.display = 'none';
+      flowBtn.style.display = 'none';
     }
   }
 
