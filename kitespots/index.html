@@ -75,6 +75,7 @@ function pointStyleFunction(feature) {
     }
   }
 };
+
 var map = new ol.Map({
   target: 'map',
   layers: [
@@ -100,26 +101,39 @@ var map = new ol.Map({
   })
 });
 
+var urlTemplates = {
+  'website':             '${ref}',
+  'ref:holfuy':          'https://holfuy.com/no/weather/${ref}',
+  'ref:kystverket':      'https://www.barentswatch.no/bolgevarsel/weatherstations/${ref}',
+  'ref:statensvegvesen': 'https://www.vegvesen.no/trafikk/vaerveikamera/${ref}',
+  'ref:frost':           'https://www.yr.no/nb/historikk/graf/5-${ref}',
+  'ref:netatmo':         'https://weathermap.netatmo.com/?stationid=${ref}',
+  'ref:wunderground':    'https://www.wunderground.com/dashboard/pws/${ref}'
+};
+function getFeatureUrl(feature) {
+  for (var key in urlTemplates) {
+    var ref = feature.get(key);
+    if (ref) return urlTemplates[key].replace('${ref}', ref);
+  }
+  return null;
+}
 map.on('pointermove', function(evt) {
   var feature = map.forEachFeatureAtPixel(evt.pixel, function(f) { return f; });
-  var hasWebsite = feature && feature.get('website');
-  map.getTargetElement().style.cursor = hasWebsite ? 'pointer' : '';
-  if (hasWebsite) {
-    var url = feature.get('website').replace(/https?:\/\//,'');
-    if (url) {
-      statuspanel.textContent = url;
-      statuspanel.style.display = 'block';
-      return;
-    }
+  var url = feature && getFeatureUrl(feature);
+  map.getTargetElement().style.cursor = url ? 'pointer' : '';
+  if (url) {
+    statuspanel.textContent = url.replace(/https?:\/\//,'');
+    statuspanel.style.display = 'block';
+    return;
   }
   statuspanel.style.display = 'none';
 });
 map.on('singleclick', function(evt) {
   map.forEachFeatureAtPixel(evt.pixel, function(feature) {
-    var url = feature.get('website');
+    var url = feature && getFeatureUrl(feature);
     if (url) {
       window.open(url, '_blank');
-      return true; // stopp etter første treff
+      return true;
     }
   });
 });
