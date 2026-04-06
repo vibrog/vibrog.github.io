@@ -38,15 +38,6 @@
   <node id='-64' lat='59.798131' lon='10.292970'>
     <tag k='barrier' v='windfall' />
   </node>
-  <node id='-68' lat='59.798108' lon='10.300065'>
-    <tag k='barrier' v='windfall' />
-  </node>
-  <node id='-70' lat='59.795045' lon='10.298899'>
-    <tag k='barrier' v='windfall' />
-  </node>
-  <node id='-72' lat='59.793515' lon='10.298868'>
-    <tag k='barrier' v='windfall' />
-  </node>
   <node id='-74' lat='59.795124' lon='10.309117'>
     <tag k='barrier' v='windfall' />
   </node>
