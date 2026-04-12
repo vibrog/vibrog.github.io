@@ -41,4 +41,7 @@
   <node id='-74' lat='59.795124' lon='10.309117'>
     <tag k='barrier' v='windfall' />
   </node>
+  <node id='-75' lat='59.769181' lon='10.345425'>
+    <tag k='barrier' v='windfall' />
+  </node>
 </osm>
