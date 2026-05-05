@@ -8,7 +8,10 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #fff; overflow: hidden; }
   body, .wrap { width: 100vw; height: 100vh; }
-  .slide-img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .slide-img {
+    width: 100%; height: 100%; object-fit: contain; display: block;
+    touch-action: none; -webkit-user-drag: none;
+  }
 
   .top-left {
     position: absolute;
@@ -325,6 +328,38 @@
   slider.addEventListener('input', () => {
     if (playing) togglePlay();
     goto(parseInt(slider.value));
+  });
+
+  const keyActions = {
+    'ArrowRight': () => { if (playing) togglePlay(); goto(current + 1); },
+    'ArrowLeft':  () => { if (playing) togglePlay(); goto(current - 1); },
+    ' ':          () => { togglePlay(); e.preventDefault(); },
+  };
+  document.addEventListener('keydown', e => keyActions[e.key]?.());
+
+  let dragStartX = null;
+  const DRAG_THRESHOLD = 30; // px per bilde
+  let wasDrag = false;
+  img.addEventListener('dragstart', e => e.preventDefault());
+  img.addEventListener('pointerdown', e => {
+    dragStartX = e.clientX;
+    wasDrag = false;
+  });
+  img.addEventListener('pointermove', e => {
+    if (dragStartX === null) return;
+    const dx = e.clientX - dragStartX;
+    if (Math.abs(dx) > DRAG_THRESHOLD) {
+      wasDrag = true;
+      if (playing) togglePlay();
+      goto(current + (dx > 0 ? 1 : -1));
+      dragStartX = e.clientX;
+    }
+  });
+  img.addEventListener('pointerup',() => { dragStartX = null; });
+  img.addEventListener('pointercancel',() => { dragStartX = null; });
+
+  img.addEventListener('click', e => {
+    if (!wasDrag) togglePlay();
   });
 
   detectOffset();
