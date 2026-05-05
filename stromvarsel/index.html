@@ -313,7 +313,9 @@
     playing = !playing;
     btnPlay.innerHTML = playing ? iconStop : iconPlay;
     if (playing) {
-      timer = setInterval(() => goto(current >= hours.length - 1 ? 0 : current + 1), speed);
+      const next = () => goto(current >= hours.length - 1 ? 0 : current + 1);
+      next();
+      timer = setInterval(next, speed);
     } else {
       clearInterval(timer);
     }
